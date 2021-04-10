@@ -17,15 +17,17 @@
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
 
+        <script src="https://use.fontawesome.com/bfa2dea03e.js"></script>
+
     </head>
 
     <body>
 
         <header>
-            <div>
+            <div class="logo">
                 <img src="img/logo.png" alt="">
             </div>
-            <button class="nav-toggle" aria-label="toggle navigation">
+            <button class="nav-toggle" >
                 <span class="hamburger"></span>
             </button>
             <nav class="nav">
@@ -100,14 +102,14 @@
                 <p></p>
             </div>
 
-            <img src="img/face2.jpg" alt="smiling guy">
+            <img src="img/face2.jpg" alt="smiling guy" class="about-me__img">
         </section>
 
         <!--My Work-->
 
         <section class="my-work" id="work">
-            <h2 class="section__title">My Work</h2>
-            <p class="section__subtitle"></p>
+            <h2 class="section__title section__title--work">My Work</h2>
+            <p class="section__subtitle section__subtitle--work">A selection of my range of projects</p>
 
             <div class="portfolio">
                 <!--Portfolio item 01-->
@@ -125,15 +127,24 @@
 
         <!--Footer-->
 
-        <footer>
+        <footer class="footer">
             <!--Email-->
             <a href="mailto:intisharalam@outlook.com">intisharalam@outlook.com</a>
             <ul class="social-list">
-                <li class="social-list__item"><a href="" class="social-list__link">a</a></li>
-                <li class="social-list__item"><a href="" class="social-list__link">b</a></li>
-                <li class="social-list__item"><a href="" class="social-list__link">c</a></li>
+                <li class="social-list__item">
+                    <a href="" class="social-list__link">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a href="" class="social-list__link">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                </li>
             </ul>
         </footer>
+
+        <script src="js/index.js"></script>
 
     </body>
 
