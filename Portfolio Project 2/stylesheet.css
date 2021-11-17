@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
+  font-family: Fira Code, Fira Code Light;
+}
+.container{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* intro start */
+#intro {
+  background-image: url(./img/arduinoIntro.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+#intro::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.6;
+  z-index: -1;
+}
+#name{
+  font-size: 10rem;
+  font-family: Fira Code;
+  text-shadow: 5px 5px #000000;
+  position: relative;
+  color: #e34234;
+  margin: 0;
+  padding:0;
+  text-align: center;
+}
+#aspire{
+  font-size: 6rem;
+  font-family: Fira Code Light;
+  text-shadow: 5px 5px #000000;
+  position: relative;
+  color: #a8bbb0;
+  margin: 0;
+  padding:0;
+  text-align: center;
+}
+/* intro end */
+
+/*About me start*/
+.about-me {
+    display: inline-flex;
+    gap: 5em;
+}
+#about-me {
+  position: relative;
+  margin: 0 auto;
+}
+#about-me-img{
+  max-width: 300px;
+}
+
+media (min-width: 600px){
+
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #about-me__img{
+        max-width: 150px;
+        grid-area: "./img/LCD.jpg";
+        position: relative;
+    }
+}
+
+.text{
+  font-size: 1.4em;
+}
+.text-title{
+  font-size: 2.5em;
+}
+
+/*About Me end*/
