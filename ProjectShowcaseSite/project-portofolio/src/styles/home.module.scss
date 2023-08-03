@@ -1,0 +1,10 @@
+@import "../utilities/variables";
+
+.center {
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-dark;
+  color: $headline-dark;
+}
