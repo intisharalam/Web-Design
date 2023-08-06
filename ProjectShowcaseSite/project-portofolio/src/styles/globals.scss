@@ -6,18 +6,8 @@
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
-
-html {
-  overflow: scroll;
-}
-
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* make scrollbar transparent */
-}
-
 .center {
   min-height: 600px;
   display: flex;
@@ -25,4 +15,22 @@ html {
   align-items: center;
   background-color: $background-dark;
   color: $headline-dark;
+}
+
+
+
+:root {
+  --shadow: #ff8906;
+  --scrollbarBG: #eee;
+  --thumbBG: #ff8906;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  box-shadow: 0 -100vh 0 100vh var(--shadow);
 }

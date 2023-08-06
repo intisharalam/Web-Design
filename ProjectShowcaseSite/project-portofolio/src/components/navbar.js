@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 const links = [
     ["Home", "/"],
     ["Projects", "/projGallery"],
-    ["About", "/about"],
+    ["About", "/#about"],
     ["Contact", "/contact"],
 ];
 
@@ -17,7 +17,7 @@ function NavListItem({ arrItems = ["", ""] }) {
     const router = useRouter();
 
     return (
-        arrItems.map((linkList, idx) => (
+        arrItems.map((linkList) => (
             <li key={linkList[0]} className={router.pathname == linkList[1] ? styles.active : ""}>
                 <Link href={linkList[1]}>
                     {linkList[0]}
