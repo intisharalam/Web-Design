@@ -4,13 +4,11 @@
 
 /*Section template*/
 .sectionB {
-  min-height: 80vh;
   background-color: $background-dark;
   color: $headline-dark;
 }
 
 .sectionW {
-  min-height: 80vh;
   background-color: $background-light;
   color: $headline-light;
 }
@@ -129,6 +127,7 @@
   column-gap: 2rem;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   padding: 0 calc(1rem + 5vw) 0 calc(1rem + 5vw);
 }
 
@@ -140,7 +139,7 @@
 .aboutMeSect .imgContainer img {
   height: 350px;
   width: 400px;
-  box-shadow: 0 0 30px 5px rgba(78, 78, 78, 0.5);
+  box-shadow: 0 0 30px 5px rgba(78, 78, 78, 0.8);
   object-fit: cover;
   border-radius: 5%;
 }
@@ -168,13 +167,14 @@
 
 /*Project Section*/
 .projectSect .container {
-  display: flex;
-  flex-direction: column;
-  height: 150vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 25vh; /* top row is 100px in height */
 
-  row-gap: 5vh;
+  row-gap: 10vh;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20vh;
 }
 
 .projectSect .sectHeading h1 {
@@ -190,11 +190,10 @@
 }
 
 .projectSect .sectHeading {
-  margin: -10vh 0 -10vh 0;
-  height: 20vh;
+  margin-top:  auto;
 }
 
-.projectSect .card1 {
+.projectSect .card {
   min-height: 400px;
   min-width: 660px;
 
@@ -209,8 +208,8 @@
 }
 
 
-/*eeRover card*/
-.eeRover {
+/*proj card card*/
+.eeRover, .windTurbine {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
@@ -221,24 +220,24 @@
   padding: 2rem 1rem 2rem 0.5rem;
 }
 
-.eeRover .imgCard {
+.eeRover .imgCard, .windTurbine .imgCard {
   display: flex;
   justify-content: center;
 }
 
-.eeRover .imgCard img {
+.eeRover .imgCard img, .windTurbine .imgCard img {
   height: 90%;
   width: 90%;
-  box-shadow: 0 0 30px 5px rgba(78, 78, 78, 0.5);
+  box-shadow: 0 0 30px 5px rgba(78, 78, 78, 0.65);
   border-radius: 5%;
 }
 
-.eeRover sup {
-  font-size: 1.5rem;
+.eeRover sup, .windTurbine sup {
+  font-size: 1rem;
 }
 
 
-
+/*card texts*/
 .projText {
   padding: 0 2rem 0 2rem;
   text-align: center;
@@ -269,4 +268,65 @@
   box-shadow: 0 0 10px 1px rgba(78, 78, 78, 0.5);
   padding: 1rem;
   border-radius: 5px;
+}
+
+
+/*Contact Section*/
+.contactSect .container {
+  height: 55vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 15vh 10vw 15vh 10vw;
+}
+
+.contactSect .contactTitle h3 {
+  font-size: calc(15px + 1vw);
+  padding: 0 0 0.75rem 0;
+  color: #e53170;
+}
+
+.contactSect .contactTitle h1 {
+  font-size: calc(20px + 1vw);
+  padding: 0 0 2rem 0;
+}
+
+.contactSect .contactInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  column-gap: 10vh;
+}
+
+.contactSect .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 5vh;
+}
+
+.contactSect .item i {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: $button-light;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: $background-light;
+}
+
+.contactSect .item a {
+  text-decoration: none;
+  color: #2e2f3e;
+}
+
+.contactSect .item h3 {
+  font-weight: 500;
+  color: #2e2f3e;
+}
+
+.contactSect .item h3:hover, .contactSect .item a:hover {
+  color: #e53170;
+  cursor: pointer;
 }

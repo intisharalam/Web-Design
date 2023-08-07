@@ -3,6 +3,8 @@ import Image from "next/image";
 import PFP from "/public/PFP.jpg";
 import HelloWorld from "/public/helloWorld.jpg"
 import EERover from "/public/EERover.jpg"
+import WindTurbine from "/public/windTurbine.jpg"
+import comingSoon from "/public/comingSoon.png"
 
 export default function Home() {
   return (
@@ -15,9 +17,9 @@ export default function Home() {
             </h2>
             <p>
               Hi, I'm Intishar Alam Misbahul. An ardent learner and maker.<br></br>
-              Currently a 2<sup className={styles.sup}>nd</sup> Year Electronics and Information Engineering (EIE)
+              Currently a 2<sup className={styles.sup}>nd</sup> Year Electronic and Information Engineering (EIE)
               student at Imperial College London.<br></br>
-              I am based in Whitechapel, London. 📍
+              I am based in Whitechapel, London, UK. 📍
             </p>
             <div className={styles.social_links}>
               <a href="https://wa.me/447928189195"><i className={"fab fa-whatsapp"}></i></a>
@@ -54,16 +56,13 @@ export default function Home() {
               A dedicated engineering student
             </h2>
             <p>
-              As a highly motivated 2nd-year EIE student at Imperial College London, I bring a diverse skill set encompassing Python, C++, C#, HTML, CSS, and Javascript. My passion for programming, web development, and hardware integration drives me to undertake innovative projects.
+              As a highly motivated 2nd-year EIE student at Imperial College London, I bring a diverse skill set encompassing Python, C family, HTML, CSS, and ReactJs. My passion for programming, web development, and hardware integration drives me to undertake innovative projects.
               <br></br>
               <br></br>
-              I have demonstrated my expertise in building websites, creating games using Unity, and working on exciting electronics projects. Notably, I championed a science fair with a Java-based sonar radar system, showcasing my technical proficiency.
+              I have demonstrated my expertise in building websites (such as this one), creating games using Unity, and working on exciting electronics projects. Notably, I championed a science fair with a Java-based sonar radar system, showcasing my technical proficiency.
               <br></br>
               <br></br>
               Beyond technical abilities, I am multilingual in English, Bengali, and Italian, which enables effective communication and collaboration with people from various backgrounds.
-              <br></br>
-              <br></br>
-              I am eager to contribute my technical skills, creativity, and problem-solving abilities to projects and organizations, striving to make a meaningful impact. A team player by nature, I enjoy collaborating with cross-functional teams to achieve outstanding results in web development.
             </p>
           </div>
 
@@ -77,11 +76,11 @@ export default function Home() {
               Top Projects
             </h1>
             <h2>
-              Each projects is a unique learning experience
+              Each project is a unique learning experience
             </h2>
           </div>
 
-          <div className={`${styles.card1} ${styles.eeRover}`}>
+          <div className={`${styles.card} ${styles.eeRover}`}>
             <div className={`${styles.imgCard}`}>
               <Image
                 src={EERover}
@@ -96,19 +95,108 @@ export default function Home() {
               </h1>
               <p>
                 EERover is a project I did in a team at the end of my 1st-Year.
-                The rover was meant to be controlled using a self-hosted web page.
+                The rover was designed to be controlled using a self-hosted web page.
                 I was incharge of designing the chassis body, the arm (hosted sensors)
                 and creating and designing the web server and the web page.
               </p>
               <div className={styles.skills}>
-                <h4>C#</h4>
+                <h4>Front-End</h4>
                 <h4>Fusion 360</h4>
+                <h4>Arduino</h4>
               </div>
               <div>
                 <h5>Links to source coming soon...</h5>
               </div>
             </div>
           </div>
+
+          <div className={`${styles.card} ${styles.windTurbine}`}>
+            <div className={styles.projText}>
+              <h1>
+                Makerspace Turbine Project 2<sup>nd</sup> Place
+              </h1>
+              <p>
+                As a participant in Imperial's Makerspace turbine project, I worked with Antonio (on the right) to design our own turbine blade.
+                I used my CAD skills to design the blade while Antonio helped tweak it to make it more aerodynamic.
+                <br></br>
+                We came second only losing 1st place by 0.001 in power coefficient of our blade.
+              </p>
+              <div className={styles.skills}>
+                <h4>Fusion 360</h4>
+              </div>
+              <div>
+                <h5>Links to source coming soon...</h5>
+              </div>
+            </div>
+
+            <div className={`${styles.imgCard}`}>
+              <Image
+                src={WindTurbine}
+                alt=""
+              >
+              </Image>
+            </div>
+          </div>
+
+          <div className={`${styles.card} ${styles.windTurbine}`}>
+          <div className={`${styles.imgCard}`}>
+              <Image
+                src={comingSoon}
+                alt="Coming Soon"
+              >
+              </Image>
+            </div>
+
+            <div className={styles.projText}>
+              <h1>
+                Title
+              </h1>
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <div className={styles.skills}>
+                <h4>Skills</h4>
+              </div>
+              <div>
+                <h5>Links to source coming soon...</h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className={`${styles.contactSect}`} id="contact">
+        <div className={`${styles.container} ${styles.sectionW}`}>
+          <div className={styles.contactTitle}>
+            <h3>Contact</h3>
+            <h1>Get in touch!👇</h1>
+          </div>
+
+          <div className={styles.contactInfo}>
+            <div className={styles.item}>
+              <i className="material-icons">map</i>
+              <div>
+                <h2>Location</h2>
+                <h3>London, UK</h3>
+              </div>
+            </div>
+
+            <div className={styles.item}>
+              <i className="material-icons">local_post_office</i>
+              <div>
+                <h2>Email</h2>
+                <h3>
+                  <a href="mailto:intisharalam@outlook.com">
+                    intisharalam@outlook.com
+                  </a>
+                </h3>
+              </div>
+            </div>
+            
+          </div>
+
         </div>
       </div>
     </>

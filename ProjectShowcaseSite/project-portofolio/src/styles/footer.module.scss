@@ -15,11 +15,11 @@
 .footer_col a {
   list-style: none;
   text-decoration: none;
-  color: $nav-text-light;
+  color: $nav-text-dark;
 }
 
 .footer {
-  background-color: $footer-background-light;
+  background-color: $footer-background-dark;
   padding: 70px 0;
 }
 
@@ -30,7 +30,7 @@
 
 .footer_col h4 {
   font-size: 18px;
-  color: $footer-text-light;
+  color: $footer-text-dark;
   text-transform: capitalize;
   margin-bottom: 35px;
   font-weight: 500;
@@ -55,7 +55,6 @@
   text-transform: capitalize;
   text-decoration: none;
   font-weight: 300;
-  color: black;
   display: block;
   transition: all 0.3s ease;
 }
@@ -88,6 +87,7 @@
   display: flex;
   align-self: center;
   justify-content: center;
+  -webkit-filter: invert(100%);
 }
 
 .footer_logo img {

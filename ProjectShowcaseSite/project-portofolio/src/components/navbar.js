@@ -10,7 +10,7 @@ const links = [
     ["Home", "/"],
     ["Projects", "/projGallery"],
     ["About", "/#about"],
-    ["Contact", "/contact"],
+    ["Contact", "/#contact"],
 ];
 
 function NavListItem({ arrItems = ["", ""] }) {
