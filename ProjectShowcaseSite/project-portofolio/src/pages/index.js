@@ -80,7 +80,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className={`${styles.card} ${styles.eeRover}`}>
+          <div className={`${styles.card} ${styles.projCard}`}>
             <div className={`${styles.imgCard}`}>
               <Image
                 src={EERover}
@@ -110,7 +110,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`${styles.card} ${styles.windTurbine}`}>
+          <div className={`${styles.card} ${styles.projCard}`}>
             <div className={styles.projText}>
               <h1>
                 Makerspace Turbine Project 2<sup>nd</sup> Place
@@ -138,7 +138,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`${styles.card} ${styles.windTurbine}`}>
+          <div className={`${styles.card} ${styles.projCard}`}>
           <div className={`${styles.imgCard}`}>
               <Image
                 src={comingSoon}

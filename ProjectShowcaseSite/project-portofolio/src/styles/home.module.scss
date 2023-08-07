@@ -169,7 +169,8 @@
 .projectSect .container {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 25vh; /* top row is 100px in height */
+  grid-template-rows: 25vh;
+  /* top row is 100px in height */
 
   row-gap: 10vh;
   justify-content: center;
@@ -190,7 +191,7 @@
 }
 
 .projectSect .sectHeading {
-  margin-top:  auto;
+  margin-top: auto;
 }
 
 .projectSect .card {
@@ -208,11 +209,11 @@
 }
 
 
-/*proj card card*/
-.eeRover, .windTurbine {
+/*proj card*/
+.projCard {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 2rem;
+  column-gap: 1rem;
 
   justify-content: center;
   align-items: center;
@@ -220,19 +221,19 @@
   padding: 2rem 1rem 2rem 0.5rem;
 }
 
-.eeRover .imgCard, .windTurbine .imgCard {
+.projCard .imgCard {
   display: flex;
   justify-content: center;
 }
 
-.eeRover .imgCard img, .windTurbine .imgCard img {
+.projCard .imgCard img {
   height: 90%;
   width: 90%;
   box-shadow: 0 0 30px 5px rgba(78, 78, 78, 0.65);
   border-radius: 5%;
 }
 
-.eeRover sup, .windTurbine sup {
+.projCard sup {
   font-size: 1rem;
 }
 
@@ -244,10 +245,10 @@
 }
 
 .projText h5 {
-  padding: 2rem;
+  padding: 1rem 0 0 0;
 }
 
-.projText h1{
+.projText h1 {
   font-size: calc(20px + 1vw);
   padding: 0 0 2rem 0;
 }
@@ -264,6 +265,7 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
+
 .projText h4 {
   box-shadow: 0 0 10px 1px rgba(78, 78, 78, 0.5);
   padding: 1rem;
@@ -273,21 +275,20 @@
 
 /*Contact Section*/
 .contactSect .container {
-  height: 55vh;
   display: grid;
   grid-template-rows: 1fr 1fr;
   padding: 15vh 10vw 15vh 10vw;
 }
 
 .contactSect .contactTitle h3 {
-  font-size: calc(15px + 1vw);
+  font-size: calc(17px + 1vw);
   padding: 0 0 0.75rem 0;
   color: #e53170;
 }
 
 .contactSect .contactTitle h1 {
   font-size: calc(20px + 1vw);
-  padding: 0 0 2rem 0;
+  padding: 0 0 1rem 0;
 }
 
 .contactSect .contactInfo {
@@ -295,7 +296,7 @@
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  column-gap: 10vh;
+  column-gap: 5vh;
 }
 
 .contactSect .item {
@@ -326,7 +327,142 @@
   color: #2e2f3e;
 }
 
-.contactSect .item h3:hover, .contactSect .item a:hover {
+.contactSect .item h3:hover,
+.contactSect .item a:hover {
   color: #e53170;
   cursor: pointer;
+}
+
+/*Responsive CSS for desktop*/
+@media screen and (max-width: 990px) {
+
+  /*proj card*/
+  .projCard {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1.5rem;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projCard .imgCard {
+    display: flex;
+    justify-content: center;
+  }
+
+  .projCard .imgCard img {
+    height: 80%;
+    width: 80%;
+    box-shadow: 0 0 30px 5px rgba(78, 78, 78, 0.4);
+    border-radius: 5%;
+  }
+
+  .projCard sup {
+    font-size: 1rem;
+  }
+
+  /*Project section*/
+  .projectSect .card {
+    min-width: 400px;
+    min-height: 460px;
+
+    max-width: 500px;
+    max-height: 900px;
+
+    border-radius: 10px;
+    box-shadow: 0 0 25px 1px rgba(139, 139, 139, 0.3);
+
+    background-color: $background-light;
+    color: $headline-light;
+  }
+
+  /*card texts*/
+  .projText {
+    padding: 0 1rem 0 1rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 860px) {
+
+  /* --- Welcome Section --- */
+  .welcomeSect .container {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 5vh;
+    padding: 0;
+  }
+
+  /*-->  Self-introduction section */
+  .welcomeIntro h2,
+  .welcomeIntro p {
+    text-align: center;
+  }
+
+  /*Social links below welcome section*/
+  .social_links {
+    /*Spacing of the links*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 1rem;
+  }
+
+  /*--> Intro Picture*/
+  .welcomeSect .imgContainer img {
+    height: 350px;
+    width: 350px;
+  }
+
+  /* --- About Me Section --- */
+  .aboutMeSect .container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    row-gap: 2rem;
+
+    justify-content: center;
+    align-items: center;
+    padding: calc(2rem + 5vw) calc(1rem + 5vw) calc(2rem + 5vw) calc(1rem + 5vw);
+  }
+
+  .aboutMeSect .imgContainer img {
+    border-radius: 10%;
+  }
+
+  .aboutMeSect h1 {
+    text-align: center;
+  }
+
+  .aboutMeSect h2 {
+    text-align: center;
+  }
+
+  .aboutMeSect p {
+    text-align: center;
+  }
+
+  /*Contact Section*/
+  .contactSect .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contactSect .contactTitle h3 {
+    text-align: center;
+  }
+
+  .contactSect .contactTitle h1 {
+    text-align: center;
+  }
+
+  .contactSect .contactInfo {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 2rem;
+    justify-content: center;
+  }
 }
