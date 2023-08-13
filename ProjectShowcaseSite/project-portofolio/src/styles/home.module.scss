@@ -261,6 +261,10 @@
   padding: 0.7rem;
   border-radius: 3px;
 }
+.projGallLink {
+  display: flex;
+  justify-content: center;
+}
 .projGallLink button{
   padding: 1.5rem;
   font-weight: bold;
@@ -272,7 +276,7 @@
 }
 .projGallLink button:hover {
   background-color: #e53170;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: all 0.3s;
 }
 .projGallLink a {
