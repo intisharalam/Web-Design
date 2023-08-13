@@ -45,7 +45,8 @@ export default function ProjectGallery() {
             Here you will find most of my works, old and new,
             the tabs below sectioned them based on their theme.<br></br><br></br>
             Some are old projects from a while back
-            before I made this website. Hence, some may lack in documentation.
+            before I made this website. Hence, some may lack in documentation.<br></br><br></br>
+            <strong>NOTE: Click the tabs below to see my projects!!!</strong>
           </p>
         </section>
       </div>
