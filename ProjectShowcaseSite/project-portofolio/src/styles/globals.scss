@@ -6,7 +6,7 @@
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .center {
   min-height: 600px;
@@ -19,6 +19,10 @@
 }
 
 
+/*
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --shadow: #ff8906;
@@ -35,3 +39,4 @@
   background-color: var(--thumbBG);
   box-shadow: 0 -100vh 0 100vh var(--shadow);
 }
+*/

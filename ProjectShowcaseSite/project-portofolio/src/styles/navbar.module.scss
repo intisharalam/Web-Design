@@ -22,8 +22,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    height: 4.9rem;
-    z-index: 10;
+    height: 10vh;
+    z-index: 100;
 }
 
 .nav_menu_list {
@@ -46,6 +46,7 @@
     transition: all 0.3s;
     font-size: 1.3rem;
     cursor: pointer;
+    z-index: 10;
 }
 
 .nav li a {
@@ -61,7 +62,7 @@
 .nav li.active:hover {
     background-color: $nav-background-light;
     color: $nav-text-light;
-    margin-bottom: -5rem;
+    margin-bottom: 0rem;
     transition: all 0.3s;
 }
 
@@ -69,7 +70,6 @@
     background-color: $nav-background-hover;
     color: $nav-text-hover;
     transition: all 0.3s;
-    margin-bottom: -5rem;
 }
 
 .nav_menu_bar {
@@ -83,7 +83,6 @@
     .nav {
         display: flex;
         flex-direction: column;
-        height: auto;
     }
 
     .navTop {
@@ -91,6 +90,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
+        height: 10vh;
     }
 /*Side menu*/
     .nav_menu_list {
@@ -99,7 +99,7 @@
         flex-direction: column;
 
         position: fixed;
-        top: 110px;
+        top: calc(10vh - 0.5px);
         width: 60%;
         right: -150%;
         min-height: calc(100vh - 60px);

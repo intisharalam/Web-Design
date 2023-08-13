@@ -1,0 +1,160 @@
+@import "../utilities/variables";
+
+.headerSect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    background-image: url("../../public/Radio_Controller/RadioController9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.headerSect section {
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem 0 2rem;
+
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    align-items: center;
+    justify-content: center;
+    color: $background-light;
+    background-color: rgba($background-dark, $alpha: 0.4);
+}
+.headerSect h2 {
+    font-size: calc(20px + 2vw);
+    text-align: end;
+    text-shadow: 2px 2px#e53170;
+}
+.headerSect p {
+    font-size: calc(8px + 0.8vw);
+    text-align: start;
+    text-shadow: 2px 2px#e53170;
+}
+.headerSect section div {
+    height: 40vh;
+    margin: 3.8vw;
+    background-color: #e53170;
+    box-shadow: 2px 2px $background-light;
+}
+
+
+
+.contentSect {
+    padding: 1rem;
+    color: $background-light;
+}
+.contentSect .content {
+    display: none;
+}
+.contentSect .content h2 {
+    margin-bottom: 1rem;
+}
+.projGallSect {
+    background-color: $background-dark;
+    display: grid;
+    grid-template-rows: 92px;
+    grid-auto-rows: 100%;
+    align-items: center;
+    min-height: 80vh;
+    padding: 0 0 10vh 0;
+}
+.tabSect {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    max-height: 6rem;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid $background-light;
+}
+.tabSect .tab_btn {
+    font-size: calc(10px + 0.8vw);
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    color: $background-light;
+    transition: all 0.3s;
+}
+.tabSect .tab_btn:hover {
+    background-color: #e53170;
+    color: $button-text-dark;
+    transition: all 0.2s;
+}
+/* CSS for the active tab and content */
+.tabSect .tab_btn.active {
+    background-color: $button-dark;
+    color: $background-light;
+}
+.content.active {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.projCard{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    height: 67vh;
+    width: 87vw;
+    background-color: $background-light;
+    padding: 0 2rem 0 2rem;
+    column-gap: 2.5rem;
+    border-radius: 2px;
+    box-shadow: 10px 10px $button-dark;
+}
+
+.projDescr {
+    color: $background-dark;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vh;
+}
+.projDescr h2 {
+    color: #e53170;
+    font-size: calc(19px + 1vw);
+}
+.projDescr p {
+    font-size: calc(10px + 0.5vw);
+    color: $background-dark;
+    text-align: justify;
+    
+}
+.projDescr .links {
+    display: flex;
+    justify-content: space-evenly;
+}
+.projDescr a {
+    text-decoration: none;
+    color: $background-light;
+    background-color: #e53170;
+    padding: 0.5rem;
+}
+
+@media screen and (max-width:850px), (max-height:600px) {
+    .projCard{
+        grid-template-rows: 0.8fr 1.2fr;
+        grid-template-columns: 1fr;
+        height: 90vh;
+        background-color: $background-light;
+        padding: 2rem 1rem;
+        border-radius: 2px;
+    }
+    .projCard h2 {
+        text-align: center;
+    }
+    .projCard p {
+        margin: 0 1rem;
+    }
+}

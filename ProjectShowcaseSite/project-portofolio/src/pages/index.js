@@ -104,9 +104,6 @@ export default function Home() {
                 <h4>Fusion 360</h4>
                 <h4>Arduino</h4>
               </div>
-              <div>
-                <h5>Links to source coming soon...</h5>
-              </div>
             </div>
           </div>
 
@@ -123,9 +120,6 @@ export default function Home() {
               </p>
               <div className={styles.skills}>
                 <h4>Fusion 360</h4>
-              </div>
-              <div>
-                <h5>Links to source coming soon...</h5>
               </div>
             </div>
 
@@ -158,10 +152,11 @@ export default function Home() {
               <div className={styles.skills}>
                 <h4>Skills</h4>
               </div>
-              <div>
-                <h5>Links to source coming soon...</h5>
-              </div>
             </div>
+          </div>
+
+          <div className={styles.projGallLink}>
+            <button><a href="/projGallery"> -- Project Gallery -- </a></button>
           </div>
 
         </div>
