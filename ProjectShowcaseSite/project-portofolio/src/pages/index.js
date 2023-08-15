@@ -19,7 +19,7 @@ export default function Home() {
               Hi, I'm Intishar Alam Misbahul. An ardent learner and maker.<br></br>
               Currently a 2<sup className={styles.sup}>nd</sup> Year Electronic and Information Engineering (EIE)
               student at Imperial College London.<br></br>
-              I am based in Whitechapel, London, UK. 📍
+              I am based in East London, UK. 📍
             </p>
             <div className={styles.social_links}>
               <a href="https://wa.me/447928189195"><i className={"fab fa-whatsapp"}></i></a>
@@ -53,7 +53,7 @@ export default function Home() {
               About Me
             </h1>
             <h2>
-              A dedicated engineering student
+              A dedicated engineering student 🎓
             </h2>
             <p>
               As a highly motivated 2nd-year EIE student at Imperial College London, I bring a diverse skill set encompassing Python, C family, HTML, CSS, and ReactJs. My passion for programming, web development, and hardware integration drives me to undertake innovative projects.
@@ -156,7 +156,7 @@ export default function Home() {
           </div>
 
           <div className={styles.projGallLink}>
-            <button><a href="/projGallery"> -- Project Gallery -- </a></button>
+            <button><a href="/projGallery"> 👉 Click here to see my Portfolio 👈 </a></button>
           </div>
 
         </div>

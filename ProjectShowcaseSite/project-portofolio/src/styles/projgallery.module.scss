@@ -10,6 +10,7 @@
     background-size: cover;
     background-position: center;
 }
+
 .headerSect section {
     width: 100%;
     height: 100%;
@@ -22,16 +23,19 @@
     color: $background-light;
     background-color: rgba($background-dark, $alpha: 0.4);
 }
+
 .headerSect h2 {
     font-size: calc(20px + 2vw);
     text-align: end;
     text-shadow: 2px 2px#e53170;
 }
+
 .headerSect p {
     font-size: calc(8px + 0.8vw);
     text-align: start;
     text-shadow: 2px 2px#e53170;
 }
+
 .headerSect section div {
     height: 40vh;
     margin: 3.8vw;
@@ -45,12 +49,15 @@
     padding: 1rem;
     color: $background-light;
 }
+
 .contentSect .content {
     display: none;
 }
+
 .contentSect .content h2 {
     margin-bottom: 1rem;
 }
+
 .projGallSect {
     background-color: $background-dark;
     display: grid;
@@ -60,6 +67,7 @@
     min-height: 80vh;
     padding: 0 0 10vh 0;
 }
+
 .tabSect {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -70,6 +78,7 @@
     align-items: center;
     border-bottom: 4px solid $background-light;
 }
+
 .tabSect .tab_btn {
     font-size: calc(10px + 0.8vw);
     font-weight: bold;
@@ -81,16 +90,19 @@
     color: $background-light;
     transition: all 0.3s;
 }
+
 .tabSect .tab_btn:hover {
     background-color: #e53170;
     color: $button-text-dark;
     transition: all 0.2s;
 }
+
 /* CSS for the active tab and content */
 .tabSect .tab_btn.active {
     background-color: $button-dark;
     color: $background-light;
 }
+
 .content.active {
     display: flex;
     flex-direction: column;
@@ -98,10 +110,7 @@
     align-items: center;
     justify-content: center;
 }
-
-
-
-.projCard{
+.projCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -114,7 +123,36 @@
     border-radius: 2px;
     box-shadow: 10px 10px $button-dark;
 }
-
+.siteImgContainer {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-shadow: 7px 7px #e53170;
+    border: 0.01rem solid $background-dark;
+    border-radius: 3px;
+    background-color: $background-dark;
+}
+.screenshot {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 10s ease;
+    /* Animation duration and easing */
+}
+.screenshot img {
+    width: 100%; /* Make the image fit the container width */
+    height: auto;
+    object-fit: contain;
+}
+.screenshot:hover {
+    transform: translateY(-83.5%);
+    /* Move the screenshot upwards */
+}
 .projDescr {
     color: $background-dark;
     display: flex;
@@ -125,25 +163,38 @@
     color: #e53170;
     font-size: calc(19px + 1vw);
 }
+
 .projDescr p {
     font-size: calc(10px + 0.5vw);
     color: $background-dark;
     text-align: justify;
-    
+
 }
+
 .projDescr .links {
     display: flex;
     justify-content: space-evenly;
+
+}
+.links .logo {
+    width: calc(25px + 1vw);
+    height: calc(15px + 1vw);
+    -webkit-filter: invert(1);
 }
 .projDescr a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
     text-decoration: none;
     color: $background-light;
     background-color: #e53170;
     padding: 0.5rem;
 }
 
-@media screen and (max-width:850px), (max-height:600px) {
-    .projCard{
+@media screen and (max-width:850px),
+(max-height:600px) {
+    .projCard {
         grid-template-rows: 0.8fr 1.2fr;
         grid-template-columns: 1fr;
         height: 90vh;
@@ -151,10 +202,13 @@
         padding: 2rem 1rem;
         border-radius: 2px;
     }
+
     .projCard h2 {
         text-align: center;
     }
+
     .projCard p {
         margin: 0 1rem;
     }
+
 }

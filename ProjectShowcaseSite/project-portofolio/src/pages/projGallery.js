@@ -1,8 +1,11 @@
 import styles from "../styles/projgallery.module.scss"
 import { useEffect } from 'react';
 import ImageSlider from '../components/imageSlider';
+import Image from "next/image";
+import portfolioImg from '/public/PortfolioWebPage.jpeg';
 
-const images = [
+
+const RadioCtrlImg = [
   '/Radio_Controller/RadioController4.jpg',
   '/Radio_Controller/RadioController5.jpg',
   '/Radio_Controller/RadioController9.jpg',
@@ -38,13 +41,13 @@ export default function ProjectGallery() {
     <>
       <div className={styles.headerSect}>
         <section>
-          <h2>Project Gallery</h2>
+          <h2>Project Portfolio</h2>
           <div></div>
           <p>
-            Welcome to my Project gallery!<br></br><br></br>
+            Welcome to my Project Portfolio!<br></br><br></br>
             Here you will find most of my works, old and new,
             the tabs below sectioned them based on their theme.<br></br><br></br>
-            Some are old projects from a while back
+            Some are old projects from many years back
             before I made this website. Hence, some may lack in documentation.<br></br><br></br>
             <strong>NOTE: Click the tabs below to see my projects!!!</strong>
           </p>
@@ -80,14 +83,39 @@ export default function ProjectGallery() {
                 </div>
               </div>
 
-              <ImageSlider slides={images} />
+              <ImageSlider slides={RadioCtrlImg} />
             </section>
 
           </div>
 
           <div className={styles.content}>
+            <section className={styles.projCard}>
+              <div className={styles.projDescr}>
+                <h2>NextJS Web App</h2>
+                <p>
+                  After being rejected for a Full-Stack Developer role for an internship,
+                  I decided to make this web site to showcase my skills following the constructive
+                  feedback given to me by the employer. I used industry used libraries such as NextJS
+                  for the development of the website to implement my designed site that I wireframed.
+                  <br></br><br></br>
+                  Click/Hover the image below for a cool animation!
+                </p>
+                <div className={styles.links}>
+                  <a href="https://github.com/intisharalam/Web-Design/tree/main/ProjectShowcaseSite/project-portofolio" download>
+                    <img src="github_logo.svg" className={styles.logo}></img>
+                    Github Link
+                  </a>
+                </div>
+              </div>
+              <div class={styles.siteImgContainer}>
+                <div class={styles.screenshot}>
+                  <Image src={portfolioImg} alt="Website Screenshot" />
+                </div>
+              </div>
 
+            </section>
           </div>
+
           <div className={styles.content}>
 
           </div>
