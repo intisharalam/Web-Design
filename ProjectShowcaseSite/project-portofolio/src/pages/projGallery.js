@@ -17,6 +17,26 @@ const RadioCtrlImg = [
   '/Radio_Controller/RadioCtrl7.jpg',
   // Add more image URLs here
 ];
+const EERoverImg = [
+  '/EERover/EERover1.jpg',
+  '/EERover/EERover2.jpg',
+  '/EERover/EERover3.jpg',
+  '/EERover/EERover4.jpg',
+  '/EERover/EERover5.jpg',
+];
+const TurbineImg = [
+  '/TurbineProj/Turbine1.jpg',
+  '/TurbineProj/Turbine2.jpg',
+  '/TurbineProj/Turbine3.jpg',
+  '/TurbineProj/Turbine4.png',
+];
+const FaceRecogImg = [
+  '/FaceRecog/FaceRecog1.jpg',
+  '/FaceRecog/FaceRecog2.jpg',
+  '/FaceRecog/FaceRecog3.jpg',
+  '/FaceRecog/FaceRecog4.jpg',
+  '/FaceRecog/FaceRecog5.jpg',
+];
 
 const videos = [
   '/videos/sunnyLand.mp4',
@@ -65,7 +85,7 @@ export default function ProjectGallery() {
       <div className={styles.projGallSect}>
 
         <div className={styles.tabSect}>
-          <button className={styles.tab_btn}>Electronics</button>
+          <button className={styles.tab_btn}>Builds</button>
           <button className={styles.tab_btn}>Programming</button>
           <button className={styles.tab_btn}>Events</button>
         </div>
@@ -92,6 +112,26 @@ export default function ProjectGallery() {
               </div>
 
               <ImageSlider slides={RadioCtrlImg} />
+            </section>
+
+            <section className={styles.projCard}>
+              <div className={styles.projDescr}>
+                <h2>EERover 1st Year Project</h2>
+                <p>
+                EERover is a project I did in a team at the end of my 1st-Year. 
+                The rover was designed to be controlled using a self-hosted web page. 
+                I was incharge of designing the chassis body, the arm (hosted sensors) 
+                and creating and designing the web server and the web page.
+                </p>
+                <div className={styles.links}>
+                  <a href="https://1drv.ms/w/s!Ag0UxqGGl6wchvgv9CT22OD85ZfFIA?e=8jVVbI">Documentation</a>
+                  <a href="https://github.com/intisharalam/EERover" download>
+                    <img src="github_logo.svg" className={styles.logo}></img>
+                    Github Link
+                  </a>
+                </div>
+              </div>
+              <ImageSlider slides={EERoverImg} />
             </section>
 
           </div>
@@ -174,10 +214,45 @@ export default function ProjectGallery() {
               </div>
             
             </section>
+
+            <section className={styles.projCard}>
+              <div className={styles.projDescr}>
+                <h2>Face Recognition for Attendance</h2>
+                <p>
+                  For my A-Level Compute Science project, I chose to develop an AI powered student attenadnce system for my school
+                  using Python and TKinter for GUI. Using Python's face_recognition library I designed and produced a software that 
+                  takes video input and looks for faces that it checks against its database and records attendace for faces matched.
+                </p>
+                <div className={styles.links}>
+                  <a href="https://1drv.ms/w/s!Ag0UxqGGl6wchvgv9CT22OD85ZfFIA?e=8jVVbI">Documentation</a>
+                  <a href="https://github.com/intisharalam/Computer-Science-Project" download>
+                    <img src="github_logo.svg" className={styles.logo}></img>
+                    Github Link
+                  </a>
+                </div>
+              </div>
+              <div className={styles.aspectRatio}>
+              <ImageSlider slides={FaceRecogImg} />
+              </div>
+            </section>
           </div>
 
           <div className={styles.content}>
+          <section className={styles.projCard}>
+              <div className={styles.projDescr}>
+                <h2>Turbine Project</h2>
+                <p>
+                As a participant in Imperial's Makerspace turbine project, I worked with Antonio to design our own turbine blade. 
+                I used my CAD skills to design the blade while Antonio helped tweak it to make it more aerodynamic.
+                We came second only losing 1st place by 0.001 in power coefficient of our blade.
+                </p>
+                <div className={styles.links}>
+                  <a href="#">Coming Soon</a>
+                </div>
+              </div>
 
+              <ImageSlider slides={TurbineImg} />
+            </section>
           </div>
         </div>
 

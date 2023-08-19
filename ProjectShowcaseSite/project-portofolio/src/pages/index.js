@@ -5,6 +5,7 @@ import HelloWorld from "/public/helloWorld.jpg"
 import EERover from "/public/EERover.jpg"
 import WindTurbine from "/public/windTurbine.jpg"
 import comingSoon from "/public/comingSoon.png"
+import RadioController from "/public/RadioCtrl.jpg"
 
 export default function Home() {
   return (
@@ -135,7 +136,7 @@ export default function Home() {
           <div className={`${styles.card} ${styles.projCard}`}>
           <div className={`${styles.imgCard}`}>
               <Image
-                src={comingSoon}
+                src={RadioController}
                 alt="Coming Soon"
               >
               </Image>
@@ -143,14 +144,18 @@ export default function Home() {
 
             <div className={styles.projText}>
               <h1>
-                Title
+                Arduino & nRF24 Radio Controller
               </h1>
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              In this project I used Arduino Nano and nRF24L01 module to make a radio transmitter. 
+              The Arduino Nano takes in digital and analog inputs components on board and packages them in a 
+              data structure that is sent to receiver that decodes it and uses it as needed. What made this 
+              different from my other projects is the use of PCB which I designed using CircuitMaker 2 (Altium).
               </p>
               <div className={styles.skills}>
-                <h4>Skills</h4>
+                <h4>Arduino</h4>
+                <h4>Soldering</h4>
+                <h4>Altium CircuitMaker 2</h4>
               </div>
             </div>
           </div>

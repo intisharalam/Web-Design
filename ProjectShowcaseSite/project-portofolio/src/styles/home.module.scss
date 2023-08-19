@@ -24,21 +24,18 @@
   grid-template-rows: 1fr;
   padding: 0 calc(1rem + 5vw) 0 calc(1rem + 5vw);
 }
-
 .welcomeSect .container div {
   margin: 0 1vw 0 1vw;
 }
-
 /*--> Intro Picture*/
 .welcomeSect .imgContainer {
   display: flex;
   justify-content: center;
   z-index: 0;
 }
-
 .welcomeSect .imgContainer img {
-  max-height: 400px;
-  max-width: 400px;
+  max-height: 350px;
+  max-width: 350px;
   height: 55vw;
   width: 55vw;
   min-height: 100px;
@@ -50,7 +47,6 @@
   /* normal border-radius */
   border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
 }
-
 @keyframes fluctuate-border-radius {
   0% {
     border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
@@ -72,7 +68,6 @@
     border-radius: 53% 47% 45% 56% / 45% 47% 56% 55%;
   }
 }
-
 /*-->  Self-introduction section */
 .welcomeIntro h2 {
   margin: 0 0 1.5rem 0.5rem;
@@ -156,12 +151,12 @@
 }
 
 .aboutMeSect h2 {
-  font-size: calc(18px + 1vw);
+  font-size: calc(17px + 1vw);
   padding: 0 0 0.5rem 0;
 }
 
 .aboutMeSect p {
-  font-size: calc(0.6rem + 0.5vw);
+  font-size: calc(10px + 0.5vw);
   color: #2e2f3e;
   font-weight: 400;
 }
@@ -418,7 +413,7 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
-
+    height: 115vh;
     row-gap: 2rem;
 
     justify-content: center;
