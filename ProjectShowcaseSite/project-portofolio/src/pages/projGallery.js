@@ -37,6 +37,11 @@ const FaceRecogImg = [
   '/FaceRecog/FaceRecog4.jpg',
   '/FaceRecog/FaceRecog5.jpg',
 ];
+const RadarImg = [
+  '/RadarProj/RadarProj1.JPG',
+  '/RadarProj/RadarProj2.JPG',
+  '/RadarProj/RadarProj3.JPG',
+];
 
 const videos = [
   '/videos/sunnyLand.mp4',
@@ -118,10 +123,10 @@ export default function ProjectGallery() {
               <div className={styles.projDescr}>
                 <h2>EERover 1st Year Project</h2>
                 <p>
-                EERover is a project I did in a team at the end of my 1st-Year. 
-                The rover was designed to be controlled using a self-hosted web page. 
-                I was incharge of designing the chassis body, the arm (hosted sensors) 
-                and creating and designing the web server and the web page.
+                  EERover is a project I did in a team at the end of my 1st-Year.
+                  The rover was designed to be controlled using a self-hosted web page.
+                  I was incharge of designing the chassis body, the arm (hosted sensors)
+                  and creating and designing the web server and the web page.
                 </p>
                 <div className={styles.links}>
                   <a href="https://1drv.ms/w/s!Ag0UxqGGl6wchvgv9CT22OD85ZfFIA?e=8jVVbI">Documentation</a>
@@ -166,11 +171,11 @@ export default function ProjectGallery() {
               <div className={styles.projDescr}>
                 <h2>CubeRun 3D Game</h2>
                 <p>
-                During my early high school years in Bangladesh, faced with a lack of engaging activities, I turned to self-taught programming. 
-                As I progressed, I embraced game development as a way to apply my skills. 
-                Guided by a tutorial, I created my first game, "CubeRun," which marked the beginning of my journey into the world of game design. 
-                <br></br><br></br>
-                This experience ignited a passion for coding and motivated me to take on more complex projects.
+                  During my early high school years in Bangladesh, faced with a lack of engaging activities, I turned to self-taught programming.
+                  As I progressed, I embraced game development as a way to apply my skills.
+                  Guided by a tutorial, I created my first game, "CubeRun," which marked the beginning of my journey into the world of game design.
+                  <br></br><br></br>
+                  This experience ignited a passion for coding and motivated me to take on more complex projects.
                 </p>
                 <div className={styles.links}>
                   <a href="https://github.com/intisharalam/Web-Design/tree/main/ProjectShowcaseSite/project-portofolio" download>
@@ -179,25 +184,25 @@ export default function ProjectGallery() {
                   </a>
                 </div>
               </div>
-              
+
               <div className={styles.video_container}>
-                <VideoPlayer 
-                videoSrc={videos[1]}
+                <VideoPlayer
+                  videoSrc={videos[1]}
                 />
               </div>
-            
+
             </section>
 
             <section className={styles.projCard}>
               <div className={styles.projDescr}>
                 <h2>Sunny Land 2D Platformer Game</h2>
                 <p>
-                Back in my early high school days in Bangladesh, I was often bored due to a lack of engaging activities. 
-                To counter this, I taught myself programming, and soon, I decided to delve into game development. 
-                My first game, "CubeRun," was completed with the help of a tutorial. 
-                Encouraged by this, I set my sights on a more challenging project – "Sunny Land."
-                <br></br>
-                This journey has been about transforming my boredom into creativity and growth.
+                  Back in my early high school days in Bangladesh, I was often bored due to a lack of engaging activities.
+                  To counter this, I taught myself programming, and soon, I decided to delve into game development.
+                  My first game, "CubeRun," was completed with the help of a tutorial.
+                  Encouraged by this, I set my sights on a more challenging project – "Sunny Land."
+                  <br></br>
+                  This journey has been about transforming my boredom into creativity and growth.
                 </p>
                 <div className={styles.links}>
                   <a href="https://github.com/intisharalam/Web-Design/tree/main/ProjectShowcaseSite/project-portofolio" download>
@@ -206,13 +211,13 @@ export default function ProjectGallery() {
                   </a>
                 </div>
               </div>
-              
+
               <div className={styles.video_container}>
-                <VideoPlayer 
-                videoSrc={videos[0]}
+                <VideoPlayer
+                  videoSrc={videos[0]}
                 />
               </div>
-            
+
             </section>
 
             <section className={styles.projCard}>
@@ -220,7 +225,7 @@ export default function ProjectGallery() {
                 <h2>Face Recognition for Attendance</h2>
                 <p>
                   For my A-Level Compute Science project, I chose to develop an AI powered student attenadnce system for my school
-                  using Python and TKinter for GUI. Using Python's face_recognition library I designed and produced a software that 
+                  using Python and TKinter for GUI. Using Python's face_recognition library I designed and produced a software that
                   takes video input and looks for faces that it checks against its database and records attendace for faces matched.
                 </p>
                 <div className={styles.links}>
@@ -232,19 +237,19 @@ export default function ProjectGallery() {
                 </div>
               </div>
               <div className={styles.aspectRatio}>
-              <ImageSlider slides={FaceRecogImg} />
+                <ImageSlider slides={FaceRecogImg} />
               </div>
             </section>
           </div>
 
           <div className={styles.content}>
-          <section className={styles.projCard}>
+            <section className={styles.projCard}>
               <div className={styles.projDescr}>
                 <h2>Turbine Project</h2>
                 <p>
-                As a participant in Imperial's Makerspace turbine project, I worked with Antonio to design our own turbine blade. 
-                I used my CAD skills to design the blade while Antonio helped tweak it to make it more aerodynamic.
-                We came second only losing 1st place by 0.001 in power coefficient of our blade.
+                  As a participant in Imperial's Makerspace turbine project, I worked with Antonio to design our own turbine blade.
+                  I used my CAD skills to design the blade while Antonio helped tweak it to make it more aerodynamic.
+                  We came second only losing 1st place by 0.001 in power coefficient of our blade.
                 </p>
                 <div className={styles.links}>
                   <a href="#">Coming Soon</a>
@@ -252,6 +257,22 @@ export default function ProjectGallery() {
               </div>
 
               <ImageSlider slides={TurbineImg} />
+            </section>
+
+            <section className={styles.projCard}>
+              <div className={styles.projDescr}>
+                <h2>Champion of Inter-School Science Fair 2019</h2>
+                <p>
+                  For my school's science project, I came first due my Arduino Sonar Radar Project. The project involved
+                  serial commincation of an Arduino Uno and my Laptop to produce a Java GUI radar that showed obstacles along with
+                  their distance from sensor. The sensor was also rotates using a Servo motor.
+                </p>
+                <div className={styles.links}>
+                  <a href="#">No Documentation Available</a>
+                </div>
+              </div>
+
+              <ImageSlider slides={RadarImg} />
             </section>
           </div>
         </div>
