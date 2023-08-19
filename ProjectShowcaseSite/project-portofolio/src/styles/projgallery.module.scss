@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     height: 90vh;
-    background-image: url("../../public/Radio_Controller/RadioController9.jpg");
+    background-image: url("../../public/Radio_Controller/RadioCtrl7.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -110,6 +110,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .projCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -123,6 +124,7 @@
     border-radius: 2px;
     box-shadow: 10px 10px $button-dark;
 }
+
 .siteImgContainer {
     width: 100%;
     height: 80%;
@@ -135,6 +137,7 @@
     border-radius: 3px;
     background-color: $background-dark;
 }
+
 .screenshot {
     width: 100%;
     height: auto;
@@ -144,21 +147,26 @@
     transition: transform 10s ease;
     /* Animation duration and easing */
 }
+
 .screenshot img {
-    width: 100%; /* Make the image fit the container width */
+    width: 100%;
+    /* Make the image fit the container width */
     height: auto;
     object-fit: contain;
 }
+
 .screenshot:hover {
     transform: translateY(-83.5%);
     /* Move the screenshot upwards */
 }
+
 .projDescr {
     color: $background-dark;
     display: flex;
     flex-direction: column;
     row-gap: 3vh;
 }
+
 .projDescr h2 {
     color: #e53170;
     font-size: calc(19px + 1vw);
@@ -176,11 +184,13 @@
     justify-content: space-evenly;
 
 }
+
 .links .logo {
     width: calc(25px + 1vw);
     height: calc(15px + 1vw);
     -webkit-filter: invert(1);
 }
+
 .projDescr a {
     display: flex;
     align-items: center;
@@ -191,6 +201,8 @@
     background-color: #e53170;
     padding: 0.5rem;
 }
+
+
 
 @media screen and (max-width:850px),
 (max-height:600px) {
