@@ -192,7 +192,7 @@
     color: $background-light;
     background-color: #e53170;
     padding: 0.5rem;
-    font-size: calc(10px + 0.5vw);
+    font-size: calc(7px + 0.5vw);
 }
 
 .aspectRatio{
@@ -214,7 +214,7 @@
     .projCard {
         grid-template-rows: 0.8fr 1.2fr;
         grid-template-columns: 1fr;
-        height: 100vh;
+        height: 80vh;
         background-color: $background-light;
         padding: 2rem 1rem;
         border-radius: 2px;
@@ -224,8 +224,13 @@
         text-align: center;
     }
 
-    .projCard p {
-        margin: 0 1rem;
-    }
+}
 
+@media screen and (max-width: 280px) {
+    .projCard {
+        height: 85vh;
+    }
+    .projDescr p{
+        font-size: calc(8px + 0.5vw);
+    }
 }
