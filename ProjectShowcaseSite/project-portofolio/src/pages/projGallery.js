@@ -33,9 +33,6 @@ const TurbineImg = [
 const FaceRecogImg = [
   '/FaceRecog/FaceRecog1.jpg',
   '/FaceRecog/FaceRecog2.jpg',
-  '/FaceRecog/FaceRecog3.jpg',
-  '/FaceRecog/FaceRecog4.jpg',
-  '/FaceRecog/FaceRecog5.jpg',
 ];
 const RadarImg = [
   '/RadarProj/RadarProj1.JPG',
@@ -236,9 +233,9 @@ export default function ProjectGallery() {
                   </a>
                 </div>
               </div>
-              <div className={styles.aspectRatio}>
-                <ImageSlider slides={FaceRecogImg} />
-              </div>
+
+              <ImageSlider slides={FaceRecogImg} />
+              
             </section>
           </div>
 
