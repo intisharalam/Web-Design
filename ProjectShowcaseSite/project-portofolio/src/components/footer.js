@@ -4,8 +4,8 @@ import Logo from "/public/Logo-black.svg"
 import Link from 'next/link';
 
 const footerCol = [
-    ["Information", ["about", "contact"]],
-    ["Projects", ["RadioRx", "RadioTx", "RadioCtrl"]]
+    ["Information", ["#about", "#contact"]],
+    ["Projects", ["adding soon"]]
 ];
 
 function FooterList({ arrItems = ["", ["", ""]] }) {
@@ -48,7 +48,7 @@ export default function Footer() {
                         <div className={styles.social_links}>
                             <a href="https://wa.me/447928189195"><i className={"fab fa-whatsapp"}></i></a>
                             <a href="https://www.instagram.com/misbahulintishar.inti/"><i className="fab fa-instagram"></i></a>
-                            <a href="https://linkedin.com/in/intishar-alam-misbahul-b10a42222"><i className="fab fa-linkedin-in"></i></a>
+                            <a href="https://linkedin.com/in/intisharalam"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>

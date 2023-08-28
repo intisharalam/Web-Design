@@ -14,18 +14,18 @@ export default function Home() {
         <div className={`${styles.container} ${styles.sectionB}`}>
           <div className={styles.welcomeIntro}>
             <h2>
-              2<sup className={styles.sup}>nd</sup> Year EIE Student
+              2<sup className={styles.sup}>nd</sup> Year EEE Student
             </h2>
             <p>
               Hi, I'm Intishar Alam Misbahul. An ardent learner and maker.<br></br>
-              Currently a 2<sup className={styles.sup}>nd</sup> Year Electronic and Information Engineering (EIE)
+              Currently a 2<sup className={styles.sup}>nd</sup> Year Electrical and Electronic Engineering (EEE)
               student at Imperial College London.<br></br>
               I am based in East London, UK. 📍
             </p>
             <div className={styles.social_links}>
               <a href="https://wa.me/447928189195"><i className={"fab fa-whatsapp"}></i></a>
               <a href="https://www.instagram.com/misbahulintishar.inti/"><i className="fab fa-instagram"></i></a>
-              <a href="https://linkedin.com/in/intishar-alam-misbahul-b10a42222"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://linkedin.com/in/intisharalam"><i className="fab fa-linkedin-in"></i></a>
             </div>
           </div>
           <div className={styles.imgContainer}>
