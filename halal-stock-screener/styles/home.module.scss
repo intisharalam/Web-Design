@@ -1,0 +1,104 @@
+@import "../utilities/variables";
+
+/* General styles */
+.container_home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 90%;
+  
+    .container_search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1vw;
+    
+        .logoImg {
+            width: 224px;
+            height: 224px;
+            margin: 0 0 clamp(10px, 1vw, 9px) 0;
+        }
+        .results {
+            margin-top: 50px;
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        .resultItem {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+    
+        .resultItem:hover {
+            background-color: #f0f0f0;
+        }
+    }
+  
+    .container_intro {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        row-gap: clamp(10px, 2vh, 15px);
+
+        .intro_greet{
+            font-size: 64px;
+        }
+
+        .intro_subheading {
+            font-size: 24px;
+            font-weight: 300;
+            color: #828282;
+        }
+
+        .intro_text{
+            font-weight: 500;
+            margin: 10px 0;
+        }
+    }
+}
+  
+.searchBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  
+    .input {
+        padding: 8px 13px;
+        text-align: left;
+        width: clamp(200px, 25vw, 400px);;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin: 0.5vw 0 0 0;
+        font-size: 20px;
+    }
+  
+    .dropdown {
+        position: absolute;
+        top: 52.5px; /* adjust based on input height */
+        left: 0;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        z-index: 1000;
+        max-height: 200px;
+        overflow-y: auto;
+        padding: 0;
+        margin: 0;
+    }
+  
+    .dropdownItem {
+        padding: 8px;
+        cursor: pointer;
+    }
+  
+    .dropdownItem:hover {
+        background-color: #f0f0f0;
+    }
+}

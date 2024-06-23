@@ -1,8 +1,6 @@
 "use client"
 
-import styles from "../styles/navbar.module.scss";
-import Image from "next/image";
-import Logo from "/public/Logo-black-2.svg";
+import styles from "@/styles/navbar.module.scss";
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
