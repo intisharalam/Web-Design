@@ -1,0 +1,31 @@
+.container {
+    margin: 0 6.25rem;
+}
+
+.cardRow {
+    display: flex;
+    margin: 32px 0;
+    justify-content: space-between;
+}
+
+.stockName {
+    display: flex;
+    margin: 32px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticker {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+
+    font-weight: 600;
+    font-size: 16px;
+
+    padding: 24px;
+    width: 350px;
+    height: 32px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 5px #E0E0E0;
+}

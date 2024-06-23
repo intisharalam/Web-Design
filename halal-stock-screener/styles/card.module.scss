@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-flow: column nowrap;
+
+    row-gap: 16px;
+    padding: 24px;
+
+    width: 540px;
+    height: 220px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px #E0E0E0;
+
+    .topText {
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .middleText {
+        font-weight: 600;
+        font-size: 45px;
+    }
+
+    .bottomText {
+        font-weight: 500;
+        font-size: 20px;
+        color: #828282;
+    }
+}
