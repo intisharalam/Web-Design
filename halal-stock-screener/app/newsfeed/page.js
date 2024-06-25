@@ -11,14 +11,35 @@ const NewsFeed = () => {
 
   useEffect(() => {
     const fetchPersonalizedData = async () => {
-      // Replace 'AAPL,GOOGL,MSFT' with your predefined list of stock symbols
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=AAPL+GOOGL+MSFT&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`);
-      setPersonalizedArticles(response.data.articles.slice(0, 10)); // Limit to 10 articles
+      try {
+        const response = await axios.get('https://gnews.io/api/v4/search', {
+          params: {
+            q: 'finance', // Example query for finance news
+            token: '34e71603b0667b65106f363592746261', // No API key required for basic usage
+            max: 10, // Limit to 10 articles
+          }
+        });
+        setPersonalizedArticles(response.data.articles);
+      } catch (error) {
+        console.error('Error fetching personalized articles:', error);
+        setPersonalizedArticles([]); // Clear articles on error
+      }
     };
 
     const fetchExploreData = async () => {
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=stocks&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`);
-      setExploreArticles(response.data.articles.slice(0, 10)); // Limit to 10 articles
+      try {
+        const response = await axios.get('https://gnews.io/api/v4/search', {
+          params: {
+            q: 'stocks', // Example query for stocks news
+            token: '34e71603b0667b65106f363592746261', // No API key required for basic usage
+            max: 10, // Limit to 10 articles
+          }
+        });
+        setExploreArticles(response.data.articles);
+      } catch (error) {
+        console.error('Error fetching explore articles:', error);
+        setExploreArticles([]); // Clear articles on error
+      }
     };
 
     fetchPersonalizedData();

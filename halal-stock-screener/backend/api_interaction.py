@@ -248,12 +248,16 @@ def generate_dummy_monthly_prices():
 
 async def fetch_news_data():
     try:
-        # Example: Fetch news related to finance
-        url = f'https://newsapi.org/v2/everything?q=finance&apiKey={NEWS_API_KEY}'
+        url = 'https://gnews.io/api/v4/search'
+        params = {
+            'q': 'finance',  # Example query for finance news
+            'token': '',  # No API key required for basic usage
+            'max': 10,  # Limit to 10 articles
+        }
         async with httpx.AsyncClient() as client:
-            response = await client.get(url)
+            response = await client.get(url, params=params)
             response.raise_for_status()
-            news_data = response.json().get('articles', [])[:10]  # Limit to 10 articles
+            news_data = response.json().get('articles', [])
             return news_data
     except httpx.HTTPStatusError as e:
         raise CustomException(f"Error fetching news: {str(e)}")

@@ -21,9 +21,9 @@ async def get_company_data():
 
 @app.get("/api/get_newsfeed")
 async def get_newsfeed():
+    print("Test")
     try:
         news_data = await fetch_news_data()
+        return {"message": "News feed fetched successfully", "data": news_data}
     except CustomException as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-    return {"message": "News feed fetched successfully", "data": news_data}

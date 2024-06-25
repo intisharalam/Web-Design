@@ -73,6 +73,11 @@
 /*Small Screen Navbar*/
 @media screen and (max-width: 715px) {
 
+    .siteName h1 {
+        font-size: 1.5rem;
+        padding: 0 2rem;
+    }
+
     .nav {
         display: flex;
         flex-direction: column;
@@ -92,12 +97,12 @@
         flex-direction: column;
 
         position: fixed;
-        top: calc(10vh - 0.5px);
+        top: calc(9vh - 0.5px);
         width: 60%;
         right: -150%;
         min-height: calc(100vh - 60px);
         
-        background-color: $nav-background-dark;
+        background-color: $nav-background-light;
         border-left: 5px solid #f25f4c;
         z-index: 1;
 
@@ -134,7 +139,7 @@
     .nav_menu_bar div{
         width: 35px;
         height: 5px;
-        background-color: $background-light;
+        background-color: $background-dark;
         border-radius: 2px;
     }
 

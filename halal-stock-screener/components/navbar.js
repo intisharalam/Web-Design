@@ -40,6 +40,25 @@ function NavListItem({ arrItems = [] }) {
 export default function Navbar() {
     const [navActive, setNavActive] = useState(false);
 
+    // Function to handle scrolling behavior
+    const handleScroll = () => {
+        const body = document.body;
+        const html = document.documentElement;
+        if (navActive) {
+            window.scrollTo(0, 0);
+            body.style.overflow = "hidden";
+            html.style.overflow = "hidden";
+        } else {
+            body.style.overflow = "auto";
+            html.style.overflow = "auto";
+        }
+    };
+
+    // Add an event listener to handle scrolling when `navActive` changes
+    useEffect(() => {
+        handleScroll();
+    }, [navActive]);
+
     return (
         <nav className={styles.nav}>
             <div className={styles.navTop}>
