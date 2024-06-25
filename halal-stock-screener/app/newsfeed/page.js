@@ -14,12 +14,13 @@ const NewsFeed = () => {
       try {
         const response = await axios.get('https://gnews.io/api/v4/search', {
           params: {
-            q: 'finance', // Example query for finance news
+            q: 'Apple OR Microsoft OR AMD OR TESLA', // Example query for finance news
             token: '34e71603b0667b65106f363592746261', // No API key required for basic usage
             max: 10, // Limit to 10 articles
           }
         });
-        setPersonalizedArticles(response.data.articles);
+        const uniqueArticles = removeDuplicates(response.data.articles);
+        setPersonalizedArticles(uniqueArticles);
       } catch (error) {
         console.error('Error fetching personalized articles:', error);
         setPersonalizedArticles([]); // Clear articles on error
@@ -35,7 +36,8 @@ const NewsFeed = () => {
             max: 10, // Limit to 10 articles
           }
         });
-        setExploreArticles(response.data.articles);
+        const uniqueArticles = removeDuplicates(response.data.articles);
+        setExploreArticles(uniqueArticles);
       } catch (error) {
         console.error('Error fetching explore articles:', error);
         setExploreArticles([]); // Clear articles on error
@@ -45,6 +47,15 @@ const NewsFeed = () => {
     fetchPersonalizedData();
     fetchExploreData();
   }, []);
+
+  const removeDuplicates = (articles) => {
+    const seenTitles = new Set();
+    return articles.filter(article => {
+      const isDuplicate = seenTitles.has(article.title);
+      seenTitles.add(article.title);
+      return !isDuplicate;
+    });
+  };
 
   const handleToggle = () => {
     setShowPersonalized(!showPersonalized); // Toggle between personalized and explore feeds

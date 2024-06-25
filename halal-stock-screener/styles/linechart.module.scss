@@ -12,3 +12,10 @@
   border-radius: 8px;
   padding: 1rem 1rem 0 0;
 }
+
+@media screen and (max-width: 845px) {
+  .chart_container {
+    flex-direction: column;
+    width: 100%;
+  }
+}

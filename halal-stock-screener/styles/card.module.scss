@@ -28,3 +28,20 @@
         color: #828282;
     }
 }
+
+@media screen and (max-width: 845px) {
+    .container{
+        width: 75vw;;
+        height: 45vw;
+        margin: 0 0 1.5rem 0;
+        .topText{
+            font-size: 5vw;
+        }
+        .middleText {
+            font-size: 11vw;
+        }
+        .bottomText{
+            font-size: 5vw;
+        }
+    }
+}

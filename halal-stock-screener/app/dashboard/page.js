@@ -11,6 +11,31 @@ import BalanceSheets from '@/components/barchart';
 import CriteriaTable from '@/components/criteriatable';
 import { useRouter } from 'next/navigation';
 
+
+const stockPrice = [
+  { year: '2014', price: 4000 },
+  { year: '2015', price: 3000 },
+  { year: '2016', price: 2000 },
+  { year: '2017', price: 2780 },
+  { year: '2018', price: 1890 },
+  { year: '2019', price: 2390 },
+  { year: '2020', price: 4490 },
+  { year: '2021', price: 3090 },
+  { year: '2022', price: 2090 },
+  { year: '2023', price: 4090 },
+];
+
+
+const assetLiability = [
+  { year: '2021', assets: 5500, liabilities: 1500 },
+  { year: '2022', assets: 4800, liabilities: 1300 },
+  { year: '2023', assets: 6000, liabilities: 1800 },
+];
+
+
+
+
+
 export default function Dashboard() {
   const [results, setResults] = useState([]);
   const [selectedSymbol, setSelectedSymbol] = useState('');
@@ -145,8 +170,6 @@ export default function Dashboard() {
     return criteriaAnalysis;
   };
 
-
-
   const computeShariahCriteria = (data) => {
     const criteriaAnalysis = [];
   
@@ -196,9 +219,7 @@ export default function Dashboard() {
   
     return criteriaAnalysis;
   };
-  
-
-  
+    
 
   return (
     <div className={styles.container}>
@@ -207,14 +228,25 @@ export default function Dashboard() {
           {loading ? (
             'Loading...'
           ) : (
-            companyData.data && Object.keys(companyData.data).length > 0 ? (
-              `${companyData.data['Company Name']} (${companyData.data['Symbol']}) | Sector: ${companyData.data['Sector']}`
-            ) : (
-              'No data available'
-            )
+            <>
+              <div className={styles.companyName}>
+                {companyData.data && Object.keys(companyData.data).length > 0 ? (
+                  `${companyData.data['Company Name']} (${companyData.data['Symbol']})`
+                ) : (
+                  'International (IBM)'
+                )}
+              </div>
+              <div className={styles.sector}>
+                {companyData.data && Object.keys(companyData.data).length > 0 ? (
+                  `Sector: ${companyData.data['Sector']}`
+                ) : (
+                  'Sector: Technology'
+                )}
+              </div>
+            </>
           )}
         </div>
-        <SearchBar onKeyPress={handleKeyPress} results={results} onSelect={handleSymbolSelect} />
+        <SearchBar className={styles.searchbar} onKeyPress={handleKeyPress} results={results} onSelect={handleSymbolSelect} />
       </div>
   
       <div className={styles.cardRow}>
@@ -237,7 +269,7 @@ export default function Dashboard() {
   
       <div className={styles.stockData}>
         <div className={styles.graph}>
-          <LineChart chartData={loading ? [] : (companyData.data ? companyData.data['Monthly Close Prices'] : [])} />
+          <LineChart chartData={loading ? [] : (companyData.data ? companyData.data['Monthly Close Prices'] : stockPrice)} />
         </div>
         <div className={styles.watchlist}>
           <Watchlist />
@@ -260,7 +292,7 @@ export default function Dashboard() {
         </div>
   
         <div className={styles.balanceSheets}>
-          <BalanceSheets chartData={loading ? [] : (companyData.data ? companyData.data['Assets_Liabilities'] : [])} />
+          <BalanceSheets chartData={loading ? [] : (companyData.data ? companyData.data['Assets_Liabilities'] : assetLiability)} />
         </div>
       </div>
     </div>
