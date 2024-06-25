@@ -1,34 +1,67 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import Image from "next/image";
-import { useState } from 'react';
 import Logo from "@/public/Logo-black-2.svg";
 import styles from "@/styles/home.module.scss";
 import SearchBar from '@/components/searchbar';
+import { useRouter } from 'next/navigation';
 
 export default function HomePage() {
     const [results, setResults] = useState([]);
+    const [selectedSymbol, setSelectedSymbol] = useState('');
+    const router = useRouter();
 
-    const handleSearch = (query) => {
+    const handleSearch = async (query) => {
         if (query.trim() === '') {
             setResults([]);
             return;
         }
-        
-        const items = [
-            'apple',
-            'banana',
-            'orange',
-            'grape',
-            'mango'
-        ];
+    
+        console.log('Search query:', query);
+    
+        try {
+            const response = await axios.get(
+                `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=${process.env.NEXT_PUBLIC_ALPHA_API_KEY}`
+            );
+    
+            console.log('API response:', response.data);
+    
+            const items = response.data.bestMatches.map(item => ({
+                name: `${item['2. name']} (${item['1. symbol']})`,
+                symbol: item['1. symbol']
+            }));
+    
+            console.log('Search results:', items);
+    
+            setResults(items);
+        } catch (error) {
+            console.error('Error fetching stock symbols:', error);
+            setResults([]);
+        }
+    };
 
-        const filteredResults = items.filter(item => 
-            item.toLowerCase().includes(query.toLowerCase())
-        );
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            handleSearch(event.target.value);
+        }
+    };
 
-        setResults(filteredResults);
+    const handleSymbolSelect = async (symbol) => {
+        setSelectedSymbol(symbol);
+
+        try {
+            const response = await axios.post('/api/get_company_data', { symbol });
+            const companyData = response.data;
+            console.log('Company data:', companyData);
+            // Handle the company data as needed
+        } catch (error) {
+            console.error('Error fetching company data:', error);
+        }
+
+        // Redirect to dashboard with symbol query parameter if needed
+        router.push(`/dashboard?symbol=${symbol}`);
     };
 
     return (
@@ -41,7 +74,7 @@ export default function HomePage() {
                     height={78}
                     alt="logo"
                 />
-                <SearchBar onSearch={handleSearch} results={results} />
+                <SearchBar onKeyPress={handleKeyPress} results={results} onSelect={handleSymbolSelect} />
             </div>
             <div className={styles.container_intro}>
                 <h1 className={styles.intro_greet}>Welcome!</h1>
