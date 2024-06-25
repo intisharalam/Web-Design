@@ -19,7 +19,7 @@ class Chart extends PureComponent {
         <ResponsiveContainer>
           <LineChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
+            <XAxis dataKey="time" />
             <YAxis />
             <Tooltip />
             <Line type="monotone" dataKey="price" stroke="#000000" />
