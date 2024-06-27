@@ -14,10 +14,13 @@ class Chart extends PureComponent {
   render() {
     const { chartData } = this.props;
 
+    // Ensure the data is sorted by time in ascending order
+    const sortedData = chartData.slice().sort((a, b) => new Date(a.time) - new Date(b.time));
+
     return (
       <div className={styles.chart_container}>
         <ResponsiveContainer>
-          <LineChart data={chartData}>
+          <LineChart data={sortedData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
             <YAxis />

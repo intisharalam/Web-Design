@@ -156,7 +156,7 @@ async def fetch_company_financial_data(symbol):
                 "Dividend Yield": overview_data.get('DividendYield', '0'),
                 "Beta": overview_data.get('Beta', '0'),
                 "Price to Book Ratio": overview_data.get('PriceToBookRatio', '0'),
-                "Assets_Liabilities": asset_liability,
+                "Assets&Liabilities": asset_liability,
                 "Liquidity Ratio": liquidity_ratio,
                 "Earnings Consistency": earnings_consistency,
                 "Debt to Equity Ratio": debt_to_equity_ratio,
@@ -182,10 +182,10 @@ async def fetch_company_financial_data(symbol):
             "Dividend Yield": "0",
             "Beta": "0",
             "Price to Book Ratio": "0",
-            "Assets_Liabilities": [
-                {"Year": '2021', "Total Assets": 0, "Total Liabilities": 0},
-                {"Year": '2022', "Total Assets": 0, "Total Liabilities": 0},
-                {"Year": '2023', "Total Assets": 0, "Total Liabilities": 0},
+            "Assets&Liabilities": [
+                {"Year": '2021', "Total Assets": 10, "Total Liabilities": 5},
+                {"Year": '2022', "Total Assets": 5, "Total Liabilities": 10},
+                {"Year": '2023', "Total Assets": 10, "Total Liabilities": 5},
             ],
             "Liquidity Ratio": 0.0,
             "Earnings Consistency": "N/A",
@@ -211,10 +211,10 @@ async def fetch_company_financial_data(symbol):
             "Dividend Yield": "0",
             "Beta": "0",
             "Price to Book Ratio": "0",
-            "Assets_Liabilities": [
-                {"Year": '2021', "Total Assets": 2, "Total Liabilities": 1},
-                {"Year": '2022', "Total Assets": 1, "Total Liabilities": 0.5},
-                {"Year": '2023', "Total Assets": 4, "Total Liabilities": 5},
+            "Assets&Liabilities": [
+                {"Year": '2021', "Total Assets": 2, "Total Liabilities": 10},
+                {"Year": '2022', "Total Assets": 1, "Total Liabilities": 50},
+                {"Year": '2023', "Total Assets": 4, "Total Liabilities": 10},
             ],
             "Liquidity Ratio": 0.0,
             "Earnings Consistency": "N/A",

@@ -7,8 +7,8 @@
 }
 
 .siteName h1 {
-    font-size: 1.75rem;
-    padding: 0 6rem 0 6.5rem;
+    font-size: clamp(1rem, 3vw, 34px);
+    padding: 0 6rem 0 5vw;
     font-weight: 600;
 }
 
@@ -33,6 +33,7 @@
 .nav a {
     color: inherit;
     font-weight: 500;
+    font-size: clamp(.5rem, 2.5vw, 28px);
     text-decoration: none;
     height: 100%;
     display: flex;

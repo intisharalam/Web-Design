@@ -7,7 +7,7 @@ import SearchBar from '@/components/searchbar';
 import Card from '@/components/card';
 import LineChart from '@/components/linechart';
 import Watchlist from '@/components/watchlist';
-import BalanceSheets from '@/components/barchart';
+import BarChart from '@/components/barchart';
 import CriteriaTable from '@/components/criteriatable';
 import { useRouter } from 'next/navigation';
 
@@ -31,9 +31,6 @@ const assetLiability = [
   { year: '2022', assets: 4800, liabilities: 1300 },
   { year: '2023', assets: 6000, liabilities: 1800 },
 ];
-
-
-
 
 
 export default function Dashboard() {
@@ -233,7 +230,7 @@ export default function Dashboard() {
                 {companyData.data && Object.keys(companyData.data).length > 0 ? (
                   `${companyData.data['Company Name']} (${companyData.data['Symbol']})`
                 ) : (
-                  'International (IBM)'
+                  'International Business Machines (IBM)'
                 )}
               </div>
               <div className={styles.sector}>
@@ -262,7 +259,7 @@ export default function Dashboard() {
         />
         <Card
           topText="Market Cap"
-          middleText={loading ? 'Loading...' : (`${companyData.data ? companyData.data['Market Cap'] : 'fail'} (Large)`)}
+          middleText={loading ? 'Loading...' : (`${companyData.data ? companyData.data['Market Cap'] : 'fail'}`)}
           bottomText={loading ? 'Loading...' : (`Beta: ${companyData.data ? companyData.data['Beta'] : 'fail'}`)}
         />
       </div>
@@ -292,7 +289,7 @@ export default function Dashboard() {
         </div>
   
         <div className={styles.balanceSheets}>
-          <BalanceSheets chartData={loading ? [] : (companyData.data ? companyData.data['Assets_Liabilities'] : assetLiability)} />
+          <BarChart chartData={loading ? [] : (companyData.data ? companyData.data['Assets&Liabilities'] : assetLiability)} />
         </div>
       </div>
     </div>

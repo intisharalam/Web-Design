@@ -1,5 +1,5 @@
 .container {
-    margin: 0 6.25rem;
+    margin: 0 5vw;
     
     .stockName {
         display: flex;
@@ -13,11 +13,12 @@
             flex-flow: column nowrap;
         
             font-weight: 600;
-            font-size: 16px;
+            font-size: clamp(1rem, 1.5vw, 24px);
         
             padding: 24px;
-            width: clamp(200px, 100vw, 10vw);
-            height: 32px;
+            width: auto;
+            height: 5vw;
+            max-height: 70px;
             border-radius: 8px;
             box-shadow: 0 0 10px 1px #E0E0E0;
             
@@ -30,32 +31,18 @@
     }
     .cardRow {
         display: flex;
-        margin: 32px 0;
         justify-content: space-between;
     }
     .stockData {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
+        display: flex;
         margin: 32px 0;
-        justify-content: space-between;
-        gap: 1vw;
-        
-        .graph, .watchlist {
-            flex: 1;
-        }    
+        justify-content: space-between;   
     }
     .financialData {
-        display: grid;
-        grid-template-columns: 0.95fr 0.95fr 1.1fr;
-        margin: 32px 0;
+        display: flex;
+        flex-direction: row;
         justify-content: space-between;
-        gap: 0.5vw;
-        
-        .benjaminCriteria, .halalCriteria, .balanceSheets {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-          }
+        flex-wrap: wrap;
     }
 }
 
@@ -66,6 +53,7 @@
             flex-direction: column-reverse;
             .ticker{
                 width: 75vw;
+                height: auto;
             }
         }
 
@@ -76,22 +64,42 @@
         }
 
     .stockData {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr;
-        
-        .graph, .watchlist {
-            justify-self: center;
-            width: 100vw;
-            padding: 0.5rem 12.5vw;
-        }    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .financialData {
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
         padding: 0.5rem 12.5vw;
     }
 }
 }
+
+@media screen and (max-width: 1600px) {
+    .container {
+        .financialData {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            .balanceSheets {
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 845px) {
+    .container {
+        .financialData {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+  }
