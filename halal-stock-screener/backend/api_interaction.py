@@ -59,8 +59,8 @@ async def fetch_company_financial_data(symbol):
 
                 asset_liability.append({
                     "Year": year,
-                    "Total Assets": total_assets,
-                    "Total Liabilities": total_liabilities
+                    "assets": total_assets,
+                    "liabilities": total_liabilities
                 })
 
             # Extract data from the latest report
@@ -183,9 +183,9 @@ async def fetch_company_financial_data(symbol):
             "Beta": "0",
             "Price to Book Ratio": "0",
             "Assets&Liabilities": [
-                {"Year": '2021', "Total Assets": 10, "Total Liabilities": 5},
-                {"Year": '2022', "Total Assets": 5, "Total Liabilities": 10},
-                {"Year": '2023', "Total Assets": 10, "Total Liabilities": 5},
+                {"Year": '---', "assets": 10, "liabilities": 5},
+                {"Year": '----', "assets": 5, "liabilities": 10},
+                {"Year": '-----', "assets": 10, "liabilities": 5},
             ],
             "Liquidity Ratio": 0.0,
             "Earnings Consistency": "N/A",
@@ -198,7 +198,9 @@ async def fetch_company_financial_data(symbol):
             "Non-Permissible Income Percentage": 0.0,
             "Earnings Growth Rate": 0.0,
             "Uninterrupted Dividends": False,
-            "Monthly Close Prices": generate_dummy_monthly_prices()
+            "Monthly Close Prices": [
+                {"time": '2024-10-12', "price": 0}
+            ]
         }
     except Exception as e:
         handle_api_exception(e)
@@ -212,9 +214,9 @@ async def fetch_company_financial_data(symbol):
             "Beta": "0",
             "Price to Book Ratio": "0",
             "Assets&Liabilities": [
-                {"Year": '2021', "Total Assets": 2, "Total Liabilities": 10},
-                {"Year": '2022', "Total Assets": 1, "Total Liabilities": 50},
-                {"Year": '2023', "Total Assets": 4, "Total Liabilities": 10},
+                {"Year": '---', "assets": 10, "liabilities": 5},
+                {"Year": '----', "assets": 5, "liabilities": 10},
+                {"Year": '-----', "assets": 10, "liabilities": 5},
             ],
             "Liquidity Ratio": 0.0,
             "Earnings Consistency": "N/A",
@@ -227,7 +229,9 @@ async def fetch_company_financial_data(symbol):
             "Non-Permissible Income Percentage": 0.0,
             "Earnings Growth Rate": 0.0,
             "Uninterrupted Dividends": False,
-            "Monthly Close Prices": generate_dummy_monthly_prices()
+            "Monthly Close Prices": [
+                {"time": '2024-10-12', "price": 0}
+            ]
         }
 
 def generate_dummy_monthly_prices():

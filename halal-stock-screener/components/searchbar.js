@@ -1,17 +1,18 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import styles from '@/styles/searchbar.module.scss';
 
-function SearchBar({ onKeyPress, results, onSelect }) {
+function SearchBar({ onKeyPress, onSelect }) {
     const [isOpen, setIsOpen] = useState(false);
+    const [results, setResults] = useState([]);
     const inputRef = useRef(null);
     const dropdownRef = useRef(null);
 
     useEffect(() => {
         function handleClickOutside(event) {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                // Clicked outside the dropdown
-                setIsOpen(false); // Close the dropdown
+                setIsOpen(false); // Close dropdown when clicked outside
             }
         }
 
@@ -22,12 +23,48 @@ function SearchBar({ onKeyPress, results, onSelect }) {
     }, []);
 
     const handleInputFocus = () => {
-        setIsOpen(true); // Open the dropdown when input is focused
+        setIsOpen(true); // Open dropdown when input is focused
+    };
+
+    const handleSearch = async (query) => {
+        if (query.trim() === '') {
+            setResults([]);
+            return;
+        }
+
+        try {
+            const apiKey = process.env.NEXT_PUBLIC_ALPHA_API_KEY;
+            const apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=${apiKey}`;
+
+            const response = await axios.get(apiUrl);
+
+            if (response.data && response.data.bestMatches) {
+                const items = response.data.bestMatches.map(item => ({
+                    name: `${item['2. name']} (${item['1. symbol']})`,
+                    symbol: item['1. symbol']
+                }));
+
+                setResults(items);
+                setIsOpen(true); // Open dropdown with results
+            } else {
+                console.warn('No matches found or unexpected response structure:', response.data);
+                setResults([]);
+            }
+        } catch (error) {
+            console.error('Error fetching stock symbols:', error);
+            setResults([]);
+        }
+    };
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            handleSearch(event.target.value);
+        }
     };
 
     const handleSelect = (symbol) => {
-        setIsOpen(false); // Close the dropdown when an item is selected
-        onSelect(symbol); // Trigger the onSelect function passed from props
+        setIsOpen(false); // Close dropdown when an item is selected
+        onSelect(symbol); // Trigger onSelect function passed from props
     };
 
     return (
@@ -37,7 +74,7 @@ function SearchBar({ onKeyPress, results, onSelect }) {
                 placeholder="🔍 Search company..."
                 className={styles.input}
                 ref={inputRef}
-                onKeyPress={onKeyPress}
+                onKeyPress={handleKeyPress}
                 onFocus={handleInputFocus}
             />
             {isOpen && results.length > 0 && (
@@ -59,7 +96,6 @@ function SearchBar({ onKeyPress, results, onSelect }) {
 
 SearchBar.propTypes = {
     onKeyPress: PropTypes.func.isRequired,
-    results: PropTypes.array.isRequired,
     onSelect: PropTypes.func.isRequired,
 };
 

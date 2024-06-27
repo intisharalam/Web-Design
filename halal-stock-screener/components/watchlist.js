@@ -3,11 +3,7 @@ import styles from '@/styles/watchlist.module.scss';
 
 const Watchlist = () => {
   const watchlistItems = [
-    { id: 1, name: 'Microsoft', ticker: 'MSFT', price: 110, change: 10 },
-    { id: 2, name: 'Apple', ticker: 'AAPL', price: 150, change: -5 },
-    { id: 3, name: 'Google', ticker: 'GOOGL', price: 2500, change: 30 },
-    { id: 4, name: 'Amazon', ticker: 'AMZN', price: 3200, change: -15 },
-
+    { id: 1, name: '---', ticker: '---', price: 0, change: 0 }
   ];
 
   return (

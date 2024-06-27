@@ -1,12 +1,17 @@
 from fastapi import FastAPI, HTTPException
-from api_interaction import fetch_company_financial_data, fetch_news_data  # Import your functions from api_interactions.py
-from exceptions import CustomException  # Import any custom exceptions you have defined
+from pydantic import BaseModel
+from api_interaction import fetch_company_financial_data, fetch_news_data
+from exceptions import CustomException
 
 app = FastAPI()
 
+class SymbolRequest(BaseModel):
+    symbol: str
+
 @app.post("/api/get_company_data")
-async def get_company_data():
-    symbol = "IBM"  # Hardcoded symbol for IBM
+async def get_company_data(request: SymbolRequest):
+    symbol = request.symbol
+    print(symbol)
 
     try:
         company_data = await fetch_company_financial_data(symbol)
@@ -21,7 +26,6 @@ async def get_company_data():
 
 @app.get("/api/get_newsfeed")
 async def get_newsfeed():
-    print("Test")
     try:
         news_data = await fetch_news_data()
         return {"message": "News feed fetched successfully", "data": news_data}
