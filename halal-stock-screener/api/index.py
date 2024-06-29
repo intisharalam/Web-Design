@@ -1,9 +1,23 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from api_interaction import fetch_company_financial_data, fetch_news_data, search_company_symbols
 from exceptions import CustomException
 
 app = FastAPI()
+
+# Allow CORS for localhost:3000
+origins = [
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class SymbolRequest(BaseModel):
     symbol: str
