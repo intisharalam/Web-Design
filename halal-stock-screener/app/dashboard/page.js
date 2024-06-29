@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../../styles/dashboard.module.scss';
-import SearchBar from '../../components/searchbar';
-import Card from '../../components/card';
-import LineChart from '../../components/linechart';
-import Watchlist from '../../components/watchlist';
-import BarChart from '../../components/barchart';
-import CriteriaTable from '../../components/criteriatable';
+import SearchBar from '../../_components/searchbar';
+import Card from '../../_components/card';
+import LineChart from '../../_components/linechart';
+import Watchlist from '../../_components/watchlist';
+import BarChart from '../../_components/barchart';
+import CriteriaTable from '../../_components/criteriatable';
 import { useRouter } from 'next/navigation';
 
 
