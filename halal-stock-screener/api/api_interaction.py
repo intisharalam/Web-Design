@@ -30,7 +30,7 @@ async def fetch_news_data():
             response = await client.get(url, params=params)
             response.raise_for_status()
             news_data = response.json().get('news', [])
-            print(news_data)
+            #print(news_data)
             return news_data
     except httpx.HTTPStatusError as e:
         raise CustomException(f"Error fetching news: {str(e)}")
