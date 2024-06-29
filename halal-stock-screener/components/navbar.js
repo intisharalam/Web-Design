@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "@/styles/navbar.module.scss";
+import styles from "../styles/navbar.module.scss";
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";

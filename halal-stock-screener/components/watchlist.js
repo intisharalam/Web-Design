@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/watchlist.module.scss';
+import styles from '../styles/watchlist.module.scss';
 
 const Watchlist = () => {
   const watchlistItems = [

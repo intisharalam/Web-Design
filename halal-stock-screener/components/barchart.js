@@ -9,7 +9,7 @@ import {
     Legend, 
     ResponsiveContainer 
 } from 'recharts';
-import styles from '@/styles/barchart.module.scss';
+import styles from '../styles/barchart.module.scss';
 
 class Chart extends PureComponent {
   // Function to format the Y-axis ticks

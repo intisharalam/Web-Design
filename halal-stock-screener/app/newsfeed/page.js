@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import styles from '@/styles/newsfeed.module.scss';
+import styles from '../../styles/newsfeed.module.scss';
 
 const NewsFeed = () => {
   const [newsFeed, setNewsFeed] = useState([]);

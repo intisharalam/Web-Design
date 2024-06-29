@@ -3,8 +3,8 @@
 // Import useState and useRouter from React and Next.js
 import React, { useState } from 'react';
 import Image from "next/image";
-import Logo from "@/public/Logo-black-2.svg";
-import styles from "@/styles/home.module.scss";
+import Logo from "../../public/Logo-black-2.svg";
+import styles from "../../styles/home.module.scss";
 import { useRouter } from 'next/navigation';
 
 export default function HomePage() {

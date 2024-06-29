@@ -8,7 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import styles from '@/styles/linechart.module.scss';
+import styles from '../styles/linechart.module.scss';
 
 class Chart extends PureComponent {
   render() {

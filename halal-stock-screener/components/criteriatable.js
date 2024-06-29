@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@/styles/criteriatable.module.scss'; // Assuming you have a CSS module for styles
+import styles from '../styles/criteriatable.module.scss'; // Assuming you have a CSS module for styles
 
 const CriteriaTable = ({ criteriaData, title }) => {
   return (

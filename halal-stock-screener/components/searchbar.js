@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import styles from '@/styles/searchbar.module.scss';
+import styles from '../styles/searchbar.module.scss';
 
 function SearchBar({ onSelect }) {
     const [isOpen, setIsOpen] = useState(false);
