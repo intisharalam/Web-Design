@@ -3,13 +3,39 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../../styles/dashboard.module.scss';
-import SearchBar from '../../_components/searchbar';
-import Card from '../../_components/card';
-import LineChart from '../../_components/linechart';
-import Watchlist from '../../_components/watchlist';
-import BarChart from '../../_components/barchart';
-import CriteriaTable from '../../_components/criteriatable';
+import SearchBar from '../../components/searchbar';
+import Card from '../../components/card';
+import LineChart from '../../components/linechart';
+import Watchlist from '../../components/watchlist';
+import BarChart from '../../components/barchart';
+import CriteriaTable from '../../components/criteriatable';
 import { useRouter } from 'next/navigation';
+
+interface CompanyData {
+  data: {
+    'Company Name'?: string;
+    Symbol?: string;
+    Sector?: string;
+    'Market Cap'?: string;
+    Beta?: string;
+    'P/E Ratio'?: string;
+    'Dividend Yield'?: string;
+    'Price to Book Ratio'?: string;
+    'Liquidity Ratio'?: string;
+    'Debt to Equity Ratio'?: string;
+    'Earnings Growth Rate'?: number;
+    'Uninterrupted Dividends'?: boolean;
+    'Assets&Liabilities'?: { year: string; assets: number; liabilities: number }[];
+    'Close Prices'?: { time: string; price: number }[];
+    'Total Non-Sharia Income'?: number;
+    'Total Interest-bearing Debt'?: number;
+    'Interest Income Percentage'?: number;
+    'Total Cash and Equivalents'?: number;
+    'Total Interest-bearing Investments'?: number;
+    'Non-Permissible Income Percentage'?: number;
+    // Add other properties as needed based on your API response
+  };
+}
 
 
 export default function Dashboard() {
