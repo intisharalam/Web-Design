@@ -1,16 +1,18 @@
 import httpx
+import os
 import yfinance as yf
 from exceptions import handle_api_exception, CustomException
 from dotenv import load_dotenv
+from datetime import datetime
 import pandas as pd
 
 # Load environment variables from .env file
 load_dotenv()
 
-STOCK_API_KEY = 'gJK3pAifqyVdjbMMoDy6bWQyyIHoBxFE'
+STOCK_API_KEY = os.getenv('NEXT_PUBLIC_STOCK_API_KEY')
 #print(STOCK_API_KEY)
 
-NEWS_API_KEY = 'FwWJ7UpulXL_blpe3AEOlkBWzSKIxP4NVfvHH_jeYPkVem9f'
+NEWS_API_KEY = os.getenv('NEXT_PUBLIC_NEWS_API_KEY')
 
 
 async def fetch_news_data():
