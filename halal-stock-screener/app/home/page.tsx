@@ -8,6 +8,7 @@ import styles from "../../styles/home.module.scss";
 import { useRouter } from 'next/navigation';
 
 export default function HomePage() {
+    const [symbol, setSymbol] = useState('');
     const router = useRouter();
 
     const handleRedirect = () => {
