@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "../styles/globals.scss";
+<<<<<<< HEAD
 <<<<<<< HEAD:halal-stock-screener/app/layout.tsx
 <<<<<<< HEAD
 import Navbar from '../_components/navbar.tsx'
@@ -12,6 +13,10 @@ import Footer from "../components/footer";
 import Navbar from '../_components/navbar'
 import Footer from "../_components/footer";
 >>>>>>> parent of 107855b (changed some formatting):halal-stock-screener/app/layout.js
+=======
+import Navbar from '../_components/navbar'
+import Footer from "../_components/footer";
+>>>>>>> parent of 107855b (changed some formatting)
 
 const inter = Inter({ subsets: ["latin"] });
 
