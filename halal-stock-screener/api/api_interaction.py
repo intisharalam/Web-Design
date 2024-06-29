@@ -59,37 +59,6 @@ async def search_company_symbols(query):
         raise CustomException(f"An error occurred: {str(e)}")
 
 
-
-"""
-
-async def search_company_symbols(query):
-    url = f"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords={query}&apikey={STOCK_API_KEY}"
-    print(url)
-    try:
-        async with httpx.AsyncClient() as client:
-            response = await client.get(url)
-            response.raise_for_status()
-            data = response.json()
-        
-        if "bestMatches" in data:
-            results = []
-            for item in data["bestMatches"]:
-                # Extract relevant fields from the item
-                name = item.get("2. name", "")
-                symbol = item.get("1. symbol", "")
-                if name and symbol:
-                    results.append({"name": f"{name} ({symbol})", "symbol": symbol})
-            return results
-        else:
-            return []  # Return empty list if no matches found or if "bestMatches" key is missing
-    except httpx.HTTPStatusError as e:
-        raise CustomException(f"HTTP error occurred: {str(e)}")
-    except Exception as e:
-        raise CustomException(f"An error occurred: {str(e)}")
-
-"""   
-
-
 async def fetch_company_financial_data(symbol):
     try:
         stock = yf.Ticker(symbol)

@@ -9,6 +9,7 @@ app = FastAPI()
 # Allow CORS for localhost:3000
 origins = [
     "http://localhost:3000",
+    "https://halal-stonks.vercel.app"
 ]
 
 app.add_middleware(
