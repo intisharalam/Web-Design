@@ -1,12 +1,25 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from api_interaction import fetch_company_financial_data, fetch_news_data
+from api_interaction import fetch_company_financial_data, fetch_news_data, search_company_symbols
 from exceptions import CustomException
 
 app = FastAPI()
 
 class SymbolRequest(BaseModel):
     symbol: str
+
+class SymbolSearchRequest(BaseModel):
+    query: str
+
+
+@app.post("/api/search_symbols")
+async def search_symbols(request: SymbolSearchRequest):
+    query = request.query
+    try:
+        results = await search_company_symbols(query)
+        return {"results": results}
+    except CustomException as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/api/get_company_data")
 async def get_company_data(request: SymbolRequest):

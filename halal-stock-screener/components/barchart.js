@@ -12,6 +12,19 @@ import {
 import styles from '@/styles/barchart.module.scss';
 
 class Chart extends PureComponent {
+  // Function to format the Y-axis ticks
+  formatYAxis = (tickItem) => {
+    if (tickItem >= 1000000000) {
+      return (tickItem / 1000000000).toFixed(1) + 'B';
+    } else if (tickItem >= 1000000) {
+      return (tickItem / 1000000).toFixed(1) + 'M';
+    } else if (tickItem >= 1000) {
+      return (tickItem / 1000).toFixed(1) + 'k';
+    } else {
+      return tickItem;
+    }
+  };
+
   render() {
     const { chartData } = this.props;
 
@@ -29,7 +42,7 @@ class Chart extends PureComponent {
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="year" />
-              <YAxis />
+              <YAxis tickFormatter={this.formatYAxis} />
               <Tooltip />
               <Legend />
               <Bar dataKey="assets" fill="#2e2f3e" />

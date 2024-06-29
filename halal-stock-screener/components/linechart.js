@@ -25,7 +25,7 @@ class Chart extends PureComponent {
             <XAxis dataKey="time" />
             <YAxis />
             <Tooltip />
-            <Line type="monotone" dataKey="price" stroke="#000000" />
+            <Line type="monotone" dataKey="price" stroke="#000000" dot={false}/>
           </LineChart>
         </ResponsiveContainer>
       </div>

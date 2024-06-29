@@ -13,7 +13,6 @@ import { useRouter } from 'next/navigation';
 
 
 export default function Dashboard() {
-  const [results, setResults] = useState([]);
   const [selectedSymbol, setSelectedSymbol] = useState('');
   const [companyData, setCompanyData] = useState({});
   const [loading, setLoading] = useState(false);
@@ -33,45 +32,6 @@ export default function Dashboard() {
       fetchData();
     }
   }, [router.query]); // Dependency on router.query ensures it runs when query changes
-  
-
-  const handleSearch = async (query) => {
-    if (query.trim() === '') {
-      setResults([]);
-      return;
-    }
-  
-    try {
-      const apiKey = process.env.NEXT_PUBLIC_ALPHA_API_KEY;
-      const apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=${apiKey}`;
-      
-      const response = await axios.get(apiUrl);
-  
-      if (response.data && response.data.bestMatches) {
-        const items = response.data.bestMatches.map(item => ({
-          name: `${item['2. name']} (${item['1. symbol']})`,
-          symbol: item['1. symbol']
-        }));
-  
-        setResults(items);
-      } else {
-        console.warn('No matches found or unexpected response structure:', response.data);
-        setResults([]);
-      }
-    } catch (error) {
-      console.error('Error fetching stock symbols:', error);
-      setResults([]);
-    }
-  };
-  
-
-
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      handleSearch(event.target.value);
-      console.log(event.target.value)
-    }
-  };
 
   const fetchCompanyData = async (symbol) => {
     setLoading(true);
@@ -116,41 +76,41 @@ export default function Dashboard() {
     // Earnings Consistency
     const earningsConsistency = data.data && data.data['Earnings Consistency'];
     if (earningsConsistency === 'Positive') {
-      criteriaAnalysis.push({ criteria: 'Earnings Consistency', limit: 'No negative earnings in the last 10 years', result: 'Y' });
+      criteriaAnalysis.push({ criteria: 'Earnings Consistency', limit: 'No negative earnings*', result: 'Y' });
     } else {
-      criteriaAnalysis.push({ criteria: 'Earnings Consistency', limit: 'No negative earnings in the last 10 years', result: 'N' || '---' });
+      criteriaAnalysis.push({ criteria: 'Earnings Consistency', limit: 'No negative earnings*', result: 'N' || '---' });
     }
   
     // Dividend History (assuming `Uninterrupted Dividends` is a boolean in your data)
     const uninterruptedDividends = data.data && data.data['Uninterrupted Dividends'];
     if (uninterruptedDividends) {
-      criteriaAnalysis.push({ criteria: 'Dividend History', limit: 'Uninterrupted dividends for the last 20 years', result: 'Y' });
+      criteriaAnalysis.push({ criteria: 'Dividend History', limit: 'Uninterrupted dividends*', result: 'Y' });
     } else {
-      criteriaAnalysis.push({ criteria: 'Dividend History', limit: 'Uninterrupted dividends for the last 20 years', result: 'N' !== undefined ? 'N' : '---' });
+      criteriaAnalysis.push({ criteria: 'Dividend History', limit: 'Uninterrupted dividends*', result: 'N' !== undefined ? 'N' : '---' });
     }
   
     // Earnings Growth Rate
     const earningsGrowthRate = data.data && data.data['Earnings Growth Rate'];
     if (earningsGrowthRate && parseFloat(earningsGrowthRate) > 33) {
-      criteriaAnalysis.push({ criteria: 'Earnings Growth Rate', limit: 'At least 33% increase over the last 10 years', result: `Y` });
+      criteriaAnalysis.push({ criteria: 'Earnings Growth Rate', limit: 'At least 33% increase*', result: `Y` });
     } else {
-      criteriaAnalysis.push({ criteria: 'Earnings Growth Rate', limit: 'At least 33% increase over the last 10 years', result: earningsGrowthRate !== undefined ? 'N' : '---' });
+      criteriaAnalysis.push({ criteria: 'Earnings Growth Rate', limit: 'At least 33% increase*', result: earningsGrowthRate !== undefined ? 'N' : '---' });
     }
   
     // Price to Earnings Ratio (P/E)
     const peRatio = data.data && data.data['P/E Ratio'];
     if (peRatio !== 'N/A' && parseFloat(peRatio) < 15) {
-      criteriaAnalysis.push({ criteria: 'Price to Earnings Ratio (P/E)', limit: '< 15 times the average earnings of the last 3 years', result: 'Y' });
+      criteriaAnalysis.push({ criteria: 'Price to Earnings Ratio (P/E)', limit: '< 15', result: 'Y' });
     } else {
-      criteriaAnalysis.push({ criteria: 'Price to Earnings Ratio (P/E)', limit: '< 15 times the average earnings of the last 3 years', result: peRatio !== 'N/A' ? 'N' : '---' });
+      criteriaAnalysis.push({ criteria: 'Price to Earnings Ratio (P/E)', limit: '< 15', result: peRatio !== 'N/A' ? 'N' : '---' });
     }
   
     // Price to Book Ratio (P/B)
     const pbRatio = data.data && data.data['Price to Book Ratio'];
     if (pbRatio !== 'N/A' && parseFloat(pbRatio) < 1.5) {
-      criteriaAnalysis.push({ criteria: 'Price to Book Ratio (P/B)', limit: '< 1.5 or (P/E * P/B < 22.5)', result: 'Y' });
+      criteriaAnalysis.push({ criteria: 'Price to Book Ratio (P/B)', limit: '< 1.5', result: 'Y' });
     } else {
-      criteriaAnalysis.push({ criteria: 'Price to Book Ratio (P/B)', limit: '< 1.5 or (P/E * P/B < 22.5)', result: pbRatio !== 'N/A' ? 'N' : '---' });
+      criteriaAnalysis.push({ criteria: 'Price to Book Ratio (P/B)', limit: '< 1.5', result: pbRatio !== 'N/A' ? 'N' : '---' });
     }
   
     // Debt to Equity Ratio (D/E)
@@ -164,7 +124,6 @@ export default function Dashboard() {
     return criteriaAnalysis;
   };
   
-
   const computeShariahCriteria = (data) => {
     const criteriaAnalysis = [];
   
@@ -207,9 +166,9 @@ export default function Dashboard() {
     const nonHalalSectors = ['alcohol', 'gambling']; // Example non-permissible sectors
     const sector = data.data && data.data['Sector'] ? data.data['Sector'].toLowerCase() : '';
     if (sector && !nonHalalSectors.includes(sector)) {
-      criteriaAnalysis.push({ criteria: 'Halal Sector', limit: 'Sector not from non-permissible ones', result: 'Y' });
+      criteriaAnalysis.push({ criteria: 'Halal Sector', limit: ' Not from non-permissible ones', result: 'Y' });
     } else {
-      criteriaAnalysis.push({ criteria: 'Halal Sector', limit: 'Sector not from non-permissible ones', result: 'N' });
+      criteriaAnalysis.push({ criteria: 'Halal Sector', limit: 'Not from non-permissible ones', result: 'N' });
     }
   
     return criteriaAnalysis;
@@ -244,13 +203,11 @@ export default function Dashboard() {
         {/* Ensure SearchBar is correctly integrated */}
         <SearchBar
           className={styles.searchbar}
-          onKeyPress={handleKeyPress}  // Attach handleKeyPress function to SearchBar's onKeyPress event
-          results={results}           // Pass results state to SearchBar
           onSelect={handleSymbolSelect}  // Pass handleSymbolSelect function to SearchBar's onSelect event
         />
+
       </div>
 
-  
       <div className={styles.cardRow}>
         <Card
           topText="Status"
@@ -271,7 +228,7 @@ export default function Dashboard() {
   
       <div className={styles.stockData}>
         <div className={styles.graph}>
-          <LineChart chartData={loading ? [] : (companyData.data ? companyData.data['Monthly Close Prices'] : [{ year: '---', price: 0 },])} />
+          <LineChart chartData={loading ? [] : (companyData.data ? companyData.data['Close Prices'] : [{ time: '---', price: 0 },])} />
         </div>
         <div className={styles.watchlist}>
           <Watchlist />

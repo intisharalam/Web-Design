@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import styles from '@/styles/searchbar.module.scss';
 
-function SearchBar({ onKeyPress, onSelect }) {
+function SearchBar({ onSelect }) {
     const [isOpen, setIsOpen] = useState(false);
     const [results, setResults] = useState([]);
     const inputRef = useRef(null);
@@ -31,19 +31,17 @@ function SearchBar({ onKeyPress, onSelect }) {
             setResults([]);
             return;
         }
-
+    
         try {
-            const apiKey = process.env.NEXT_PUBLIC_ALPHA_API_KEY;
-            const apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=${apiKey}`;
-
-            const response = await axios.get(apiUrl);
-
-            if (response.data && response.data.bestMatches) {
-                const items = response.data.bestMatches.map(item => ({
-                    name: `${item['2. name']} (${item['1. symbol']})`,
-                    symbol: item['1. symbol']
+            const apiUrl = `/api/search_symbols`;
+            const response = await axios.post(apiUrl, { query });
+    
+            if (response.data.results) {
+                const items = response.data.results.map(item => ({
+                    name: item.name,
+                    symbol: item.symbol
                 }));
-
+    
                 setResults(items);
                 setIsOpen(true); // Open dropdown with results
             } else {
@@ -95,7 +93,6 @@ function SearchBar({ onKeyPress, onSelect }) {
 }
 
 SearchBar.propTypes = {
-    onKeyPress: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
 };
 
