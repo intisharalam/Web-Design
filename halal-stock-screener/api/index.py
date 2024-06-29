@@ -11,6 +11,9 @@ class SymbolRequest(BaseModel):
 class SymbolSearchRequest(BaseModel):
     query: str
 
+@app.get("/api/health")
+async def read_health():
+    return {"status": "OK"}
 
 @app.post("/api/search_symbols")
 async def search_symbols(request: SymbolSearchRequest):
@@ -24,7 +27,6 @@ async def search_symbols(request: SymbolSearchRequest):
 @app.post("/api/get_company_data")
 async def get_company_data(request: SymbolRequest):
     symbol = request.symbol
-    print(symbol)
 
     try:
         company_data = await fetch_company_financial_data(symbol)
