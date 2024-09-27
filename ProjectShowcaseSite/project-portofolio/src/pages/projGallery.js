@@ -35,15 +35,25 @@ const FaceRecogImg = [
   '/FaceRecog/FaceRecog2.jpg',
 ];
 const RadarImg = [
-  '/RadarProj/RadarProj1.JPG',
-  '/RadarProj/RadarProj2.JPG',
-  '/RadarProj/RadarProj3.JPG',
+  '/RadarProj/RadarProj1.jpg',
+  '/RadarProj/RadarProj2.jpg',
+  '/RadarProj/RadarProj3.jpg',
 ];
+const PowerGridImg = [
+  '/PowerGrid/hardware_test.jpg',
+  '/PowerGrid/control_ui.png',
+  '/PowerGrid/full_test.png',
+];
+const TradingBotImg = [
+  '/TradingBot/Backtesting.png',
+  '/TradingBot/TrainingTest.png',
+];
+
 
 const videos = [
   '/videos/sunnyLand.mp4',
   '/videos/cubeRun.mp4',
-  // Add more video paths here
+  '/videos/ConFPS.mp4',
 ];
 
 export default function ProjectGallery() {
@@ -95,6 +105,27 @@ export default function ProjectGallery() {
         <div className={styles.contentSect}>
 
           <div className={styles.content}>
+          <section className={styles.projCard}>
+              <div className={styles.projDescr}>
+                <h2>Smart Power Grid - 2nd Yr</h2>
+                <p>
+                  In this project I used Arduino Nano and nRF24L01 module to make a radio transmitter.
+                  The Arduino Nano takes in digital and analog inputs components on board and packages them
+                  in a data structure that is  sent to receiver that decodes it and uses it as needed.
+                  What made this different from my other projects is the use of PCB which I designed using
+                  CircuitMaker 2 (Altium).
+                </p>
+                <div className={styles.links}>
+                  <a href="https://drive.google.com/file/d/1W6zTMyEPX40JtM2m5X6NFDWWshbgjDFK/view?usp=sharing">Documentation</a>
+                  <a href="https://github.com/vishesh32/QuintupleE">
+                    <img src="github_logo.svg" className={styles.logo}></img>
+                    Github Link
+                  </a>
+                </div>
+              </div>
+
+              <ImageSlider slides={PowerGridImg} />
+            </section>
 
             <section className={styles.projCard}>
               <div className={styles.projDescr}>
@@ -118,7 +149,7 @@ export default function ProjectGallery() {
 
             <section className={styles.projCard}>
               <div className={styles.projDescr}>
-                <h2>EERover 1st Year Project</h2>
+                <h2>EERover - 1st Yr</h2>
                 <p>
                   EERover is a project I did in a team at the end of my 1st-Year.
                   The rover was designed to be controlled using a self-hosted web page.
@@ -139,7 +170,56 @@ export default function ProjectGallery() {
           </div>
 
           <div className={styles.content}>
+
             <section className={styles.projCard}>
+              <div className={styles.projDescr}>
+                <h2>Stock Market Prediction Model</h2>
+                <p>
+                  For a personal project, I developed a machine learning model to predict stock market movements using Python. 
+                  The model leverages technical indicators like SMA, RSI, and ADX, and combines Bagging SVM and Voting Classifier algorithms to achieve 83% accuracy.
+                  <br></br><br></br>
+                  This project honed my skills in machine learning, data analysis, and Python, while yielding a 159% return over a simulated three-year period.
+                </p>
+                <div className={styles.links}>
+                  <a href="https://github.com/intisharalam/TradingBot" download>
+                    <img src="github_logo.svg" className={styles.logo}></img>
+                    Github Link
+                  </a>
+                </div>
+              </div>
+
+              <ImageSlider slides={TradingBotImg} />
+            </section>
+
+
+
+            <section className={styles.projCard}>
+              <div className={styles.projDescr}>
+                <h2>Console FPS Game in C++</h2>
+                <p>
+                  As a personal project, I developed a console-based FPS game using C++. The game features real-time player movement, collision detection, and 3D simulation implemented through raycasting.
+                  <br></br><br></br>
+                  This project enhanced my understanding of game mechanics, optimized performance for resource-constrained environments, and improved my proficiency in C++ and real-time processing. It was a key step in solidifying my passion for software development.
+                </p>
+                <div className={styles.links}>
+                  <a href="https://github.com/intisharalam/ConFPS" download>
+                    <img src="github_logo.svg" className={styles.logo}></img>
+                    Github Link
+                  </a>
+                </div>
+              </div>
+
+              <div className={styles.video_container}>
+                <VideoPlayer
+                  videoSrc={videos[2]}
+                />
+              </div>
+            </section>
+
+
+
+
+            <section className={styles.projCard}>              
               <div className={styles.projDescr}>
                 <h2>NextJS Web App</h2>
                 <p>
@@ -164,6 +244,9 @@ export default function ProjectGallery() {
               </div>
             </section>
 
+
+
+
             <section className={styles.projCard}>
               <div className={styles.projDescr}>
                 <h2>CubeRun 3D Game</h2>
@@ -187,8 +270,10 @@ export default function ProjectGallery() {
                   videoSrc={videos[1]}
                 />
               </div>
-
             </section>
+
+
+
 
             <section className={styles.projCard}>
               <div className={styles.projDescr}>
@@ -216,6 +301,9 @@ export default function ProjectGallery() {
               </div>
 
             </section>
+
+
+
 
             <section className={styles.projCard}>
               <div className={styles.projDescr}>
