@@ -1,11 +1,12 @@
 /* VideoPlayer.module.scss */
+@import "../utilities/variables";
 
 .video_player {
   display: grid;
   width: 100%;
   position: relative;
   overflow: hidden;
-  box-shadow: 7px 7px #e53170;
+  box-shadow: 7px 7px $card-shadow;
   margin: 0.5rem 0 0 0;
 }
 

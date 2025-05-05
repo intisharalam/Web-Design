@@ -1,3 +1,10 @@
+/*Standalone colours*/
+$dark: #0f0e17;
+$light: #fffffe;
+$orange: #ff8906;
+$red: #e53170;
+$grey: #a7a9be;
+
 /*Nav Dark Mode*/
 $nav-background-dark: #0f0e17;
 $nav-text-dark: #fffffe;
@@ -11,7 +18,6 @@ $nav-text-hover: #fffffe;
 $nav-background-hover: #ff8906;
 
 
-
 /*Footer Dark Mode*/
 $footer-background-dark: #0f0e17;
 $footer-text-dark: #fffffe;
@@ -21,21 +27,26 @@ $footer-background-light: #fffffe;
 $footer-text-light: #0f0e17;
 $footer-underline: #ff8906;
 
-
+/*Extras*/
+$border-light: $light;
+$button-default: $orange;
+$button-text-default: $light;
+$button-hover: $light;
+$button-hover-other: $red;
+$button-hover-text: $dark;
+$headline-other: $red;
+$card-shadow: $red;
+$button-hover-text-other: $red;
 
 /*Dark Mode*/
 $background-dark: #0f0e17;
 $paragraph-dark: #a7a9be;
-$button-text-dark: #fffffe;
 $headline-dark: #fffffe;
-$button-dark: #ff8906;
 
 /*Light Mode*/
 $background-light: #fffffe;
 $paragraph-light: #2e2f3e;
-$button-text-light: #fffffe;
 $headline-light: #0f0e17;
-$button-light: #ff8906;
 
 /*Card Dark Mode*/
 $card-background-dark: #fffffe;

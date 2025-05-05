@@ -7,11 +7,12 @@
   background-color: $background-dark;
   color: $headline-dark;
 }
-
 .sectionW {
   background-color: $background-light;
   color: $headline-light;
 }
+
+
 
 /* --- Welcome Section --- */
 .welcomeSect .container {
@@ -27,6 +28,7 @@
 .welcomeSect .container div {
   margin: 0 1vw 0 1vw;
 }
+
 /*--> Intro Picture*/
 .welcomeSect .imgContainer {
   display: flex;
@@ -41,7 +43,7 @@
   min-height: 100px;
   min-width: 100px;
 
-  border: 5px solid $background-light;
+  border: 5px solid $border-light;
   object-fit: cover;
   animation: fluctuate-border-radius 7s infinite alternate;
   /* normal border-radius */
@@ -68,6 +70,7 @@
     border-radius: 53% 47% 45% 56% / 45% 47% 56% 55%;
   }
 }
+
 /*-->  Self-introduction section */
 .welcomeIntro h2 {
   margin: 0 0 1.5rem 0.5rem;
@@ -77,7 +80,7 @@
   margin: 0 0 1.5rem 0.5rem;
   line-height: 1.5rem;
   font-family: 'Roboto', sans-serif;
-  color: #a7a9be;
+  color: $paragraph-dark;
   font-size: calc(12px + 0.4vw);
 }
 .welcomeIntro h2 .sup {
@@ -99,18 +102,20 @@
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: $button-light;
+  background-color: $button-default;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
-  color: $button-text-light;
+  color: $button-text-default;
 
   transition: all 0.5s ease;
 }
 .social_links a:hover {
-  color: #24262b;
-  background-color: #ffffff;
+  color: $button-hover-text;
+  background-color: $button-hover;
 }
+
+
 
 
 /* --- About Me Section --- */
@@ -146,7 +151,7 @@
 .aboutMeSect h1 {
   font-size: calc(10px + 1vw);
   padding: 0 0 0.5rem 0;
-  color: #e53170;
+  color: $headline-other;
   ;
 }
 
@@ -157,7 +162,7 @@
 
 .aboutMeSect p {
   font-size: calc(10px + 0.5vw);
-  color: #2e2f3e;
+  color: $paragraph-light;
   font-weight: 400;
 }
 
@@ -178,7 +183,7 @@
 .projectSect .sectHeading h1 {
   font-size: calc(10px + 1vw);
   padding: 0 0 0.5rem 0;
-  color: #e53170;
+  color: $headline-other;
 }
 
 .projectSect .sectHeading h2 {
@@ -198,7 +203,7 @@
   max-width: 900px;
 
   border-radius: 2px;
-  box-shadow: 10px 10px $button-light;
+  box-shadow: 10px 10px $button-default;
 
   background-color: $background-light;
   color: $headline-light;
@@ -223,7 +228,7 @@
 .projCard .imgCard img {
   height: 90%;
   width: 90%;
-  box-shadow: 10px 10px #e53170;
+  box-shadow: 10px 10px $card-shadow;
   border-radius: 2px;
 }
 .projCard sup {
@@ -242,7 +247,7 @@
 .projText p {
   font-size: calc(0.6rem + 0.5vw);
   font-weight: 400;
-  color: #2e2f3e;
+  color: $paragraph-light;
   padding: 0 0 2rem 0;
 }
 .projText .skills {
@@ -263,20 +268,20 @@
 .projGallLink button{
   padding: 1.5rem;
   font-weight: bold;
-  background-color: $button-light;
+  background-color: $button-default;
   border: none;
   border-radius: 2px;
   font-size: calc(15px + 1vw);
   transition: all 0.3s;
 }
 .projGallLink button:hover {
-  background-color: #e53170;
+  background-color: $button-hover-other;
   border-radius: 10px;
   transition: all 0.3s;
 }
 .projGallLink a {
   text-decoration: none;
-  color: $button-text-light;
+  color: $button-text-default;
 }
 
 
@@ -289,7 +294,7 @@
 .contactSect .contactTitle h3 {
   font-size: calc(17px + 1vw);
   padding: 0 0 0.75rem 0;
-  color: #e53170;
+  color: $headline-other;
 }
 .contactSect .contactTitle h1 {
   font-size: calc(20px + 1vw);
@@ -312,7 +317,7 @@
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: $button-light;
+  background-color: $button-default;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
@@ -320,15 +325,15 @@
 }
 .contactSect .item a {
   text-decoration: none;
-  color: #2e2f3e;
+  color: $paragraph-light;
 }
 .contactSect .item h3 {
   font-weight: 500;
-  color: #2e2f3e;
+  color: $paragraph-light;
 }
 .contactSect .item h3:hover,
 .contactSect .item a:hover {
-  color: #e53170;
+  color: $button-hover-text-other;
   cursor: pointer;
 }
 
