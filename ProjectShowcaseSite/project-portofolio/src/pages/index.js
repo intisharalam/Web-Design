@@ -48,18 +48,18 @@ export default function Home() {
         <div className={`${styles.container} ${styles.sectionB}`}>
           <div className={styles.welcomeIntro}>
             <h2>
-              3<sup className={styles.sup}>rd</sup> Year EEE Student
+              2<sup className={styles.sup}>nd</sup> Year Fashion Design:Print Student
             </h2>
             <p>
-              Hi, I'm Intishar Alam Misbahul. An ardent learner and maker.<br></br>
-              Currently a 3<sup className={styles.sup}>rd</sup> Year Electrical and Electronic Engineering (EEE)
-              student at Imperial College London.<br></br>
+              Hi, I'm Shumaita Alam Misbahul. Curious, collaborative and adaptable creative print designer.<br></br>
+              Currently studing Fashion Design Print (FDP) at CSM.
+              <br></br>
               I am based in East London, UK. 📍
             </p>
             <div className={styles.social_links}>
-              <a href="https://wa.me/447928189195"><i className={"fab fa-whatsapp"}></i></a>
-              <a href="https://www.instagram.com/misbahulintishar.inti/"><i className="fab fa-instagram"></i></a>
-              <a href="https://linkedin.com/in/intisharalam"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://wa.me/447897371857"><i className={"fab fa-whatsapp"}></i></a>
+              <a href="https://www.instagram.com/shumaitamisbahul/"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/shumaita-misbahul-33934a219/"><i className="fab fa-linkedin-in"></i></a>
             </div>
           </div>
           <div className={styles.imgContainer}>
@@ -88,16 +88,13 @@ export default function Home() {
               About Me
             </h1>
             <h2>
-              A dedicated engineering student 🎓
+              An inquisitive, team-oriented and flexible designer.
             </h2>
             <p>
-              As a highly motivated 3rd-year EIE student at Imperial College London, I bring a diverse skill set encompassing Python, C family, HTML, CSS, and ReactJs. My passion for programming, web development, and hardware integration drives me to undertake innovative projects.
+              I’m a Fashion Design Print student at Central Saint Martins, combining traditional craft with digital innovation. With experience in inclusive print workshops and hands-on fashion projects, I bring skills in pattern cutting, garment construction, and cross-cultural collaboration to a creative and technically grounded design practice.
               <br></br>
               <br></br>
-              I have demonstrated my expertise in building websites (such as this one), creating games using Unity, and working on exciting electronics projects. Notably, I championed a science fair with a Java-based sonar radar system, showcasing my technical proficiency.
-              <br></br>
-              <br></br>
-              Beyond technical abilities, I am multilingual in English, Bengali, and Italian, which enables effective communication and collaboration with people from various backgrounds.
+             Multidisciplinary digital creator skilled in Adobe Creative Suite, Clo3D, Blender, and Unreal Engine. Fluent in English, Bengali, and Italian, enabling effective intercultural collaboration in creative projects.
             </p>
           </div>
 
@@ -119,15 +116,13 @@ export default function Home() {
           <div className={`${styles.card} ${styles.projCard}`}>
             <div className={styles.projText}>
               <h1>
-                Smart Grid System - 2<sup>nd</sup> Yr
+               Displaced Impression 
               </h1>
-              <p> As part of the Smart Power Grid Project at Imperial College London, I collaborated with my team to develop an innovative solar energy system.
-                I utilized my CAD skills to design the hardware and played a key role in characterizing the photovoltaic array and Battery Management System, achieving a 25% increase in efficiency.
-                Our project demonstrated our ability to apply theoretical knowledge to practical applications in energy management. </p>
+              <p> This project reinterprets the traditional art of block printing through digital media, disrupting the act of imprinting to question authenticity, memory, and reproduction. </p>
               <div className={styles.skills}>
-                <h4>Embedded Systems</h4>
-                <h4>Python</h4>
-                <h4>Web Design</h4>
+                <h4>Sublimation Print</h4>
+                <h4>Repeat Print</h4>
+                <h4>Adobe Ilustrator</h4>
               </div>
             </div>
 
@@ -140,18 +135,15 @@ export default function Home() {
         
             <div className={styles.projText}>
               <h1>
-                Arduino & nRF24 Radio Controller
+               Future Blocks: Reimagining Block Printing in Digital Space
               </h1>
               <p>
-                In this project I used Arduino Nano and nRF24L01 module to make a radio transmitter.
-                The Arduino Nano takes in digital and analog inputs components on board and packages them in a
-                data structure that is sent to receiver that decodes it and uses it as needed. What made this
-                different from my other projects is the use of PCB which I designed using CircuitMaker 2 (Altium).
+                 This video showcases a creative reinterpretation of traditional block printing through cutting-edge digital media. Using Clo3D, Blender, and Unreal Engine, the project transforms handcrafted textile techniques into dynamic, immersive 3D visuals, blending heritage craftsmanship with futuristic design technology.
               </p>
               <div className={styles.skills}>
-                <h4>Arduino</h4>
-                <h4>Soldering</h4>
-                <h4>Altium CircuitMaker 2</h4>
+                <h4>Clo3D</h4>
+                <h4>Blender</h4>
+                <h4>Unreal Engine 5</h4>
               </div>
             </div>
 
@@ -172,18 +164,17 @@ export default function Home() {
 
             <div className={styles.projText}>
               <h1>
-                EERover - 1<sup>st</sup> Yr
+               Roots of Silence
               </h1>
               <p>
-                EERover is a project I did in a team at the end of my 1st-Year.
-                The rover was designed to be controlled using a self-hosted web page.
-                I was incharge of designing the chassis body, the arm (hosted sensors)
-                and creating and designing the web server and the web page.
+                This project draws from observations of paddy fields under threat,using the landscape as a metaphor for cultural and environmental erasure.
+
               </p>
               <div className={styles.skills}>
-                <h4>Front-End</h4>
-                <h4>Fusion 360</h4>
-                <h4>Arduino</h4>
+                <h4>Research</h4>
+                <h4>Textiles and Materiality</h4>
+                <h4>Pattern Cutting</h4>
+                
               </div>
             </div>
           </div>
@@ -191,18 +182,15 @@ export default function Home() {
           <div className={`${styles.card} ${styles.projCard}`}>
             <div className={styles.projText}>
               <h1>
-                Arduino & nRF24 Radio Controller
+                The Seat of Expression
               </h1>
               <p>
-                In this project I used Arduino Nano and nRF24L01 module to make a radio transmitter.
-                The Arduino Nano takes in digital and analog inputs components on board and packages them in a
-                data structure that is sent to receiver that decodes it and uses it as needed. What made this
-                different from my other projects is the use of PCB which I designed using CircuitMaker 2 (Altium).
+                The Seat of Expression investigates how a static object — a chair — can become a site of tension, resistance, and embodiment in performance.
               </p>
               <div className={styles.skills}>
-                <h4>Arduino</h4>
-                <h4>Soldering</h4>
-                <h4>Altium CircuitMaker 2</h4>
+                <h4>Screen Printing</h4>
+                <h4>Drawing</h4>
+                <h4>Monoprinting</h4>
               </div>
             </div>
 
@@ -225,18 +213,15 @@ export default function Home() {
 
             <div className={styles.projText}>
               <h1>
-                Arduino & nRF24 Radio Controller
+                Unbound Shundori
               </h1>
               <p>
-                In this project I used Arduino Nano and nRF24L01 module to make a radio transmitter.
-                The Arduino Nano takes in digital and analog inputs components on board and packages them in a
-                data structure that is sent to receiver that decodes it and uses it as needed. What made this
-                different from my other projects is the use of PCB which I designed using CircuitMaker 2 (Altium).
-              </p>
+                This is a video featuring model Heeva Raza, shot and edited by Sandra Dileep. The concept, script, direction, and garment design were all created by me, exploring the duality of navigating identity within South Asian society. The film delves into themes of intersectionality and the complex layers of existence in this cultural context.
+               </p>
               <div className={styles.skills}>
-                <h4>Arduino</h4>
-                <h4>Soldering</h4>
-                <h4>Altium CircuitMaker 2</h4>
+                <h4>Unconventional Garment construction</h4>
+                <h4>Direction</h4>
+                <h4>Design and Communication</h4>
               </div>
             </div>
           </div>
@@ -269,8 +254,8 @@ export default function Home() {
               <div>
                 <h2>Email</h2>
                 <h3>
-                  <a href="mailto:shumaita.alam@outlook.com">
-                    shumaita.alam@outlook.com
+                  <a href="mailto:samisbahul@gmail.com">
+                    samisbahul@gmail.com
                   </a>
                 </h3>
               </div>
