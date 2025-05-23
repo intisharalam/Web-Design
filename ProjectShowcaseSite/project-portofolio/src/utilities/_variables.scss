@@ -5,55 +5,62 @@ $orange: #ff8906;
 $red: #e53170;
 $grey: #a7a9be;
 
+$light-blue: #d8eefe;
+$dark-blue: #094067;
+$dark-grey: #5f6c7b;
+$bright-red: #ef4565;
+$bright-blue: #3da9fc;
+
+
 /*Nav Dark Mode*/
-$nav-background-dark: #0f0e17;
-$nav-text-dark: #fffffe;
+$nav-background-dark: $light-blue;
+$nav-text-dark: $dark-grey;
 
 /*Nav Light Mode*/
-$nav-background-light: #fffffe;
-$nav-text-light: #0f0e17;
+$nav-background-light: $light;
+$nav-text-light: $dark-blue;
 
 /*Nav Hover*/
-$nav-text-hover: #fffffe;
-$nav-background-hover: #ff8906;
+$nav-text-hover: $light;
+$nav-background-hover: $bright-blue;
 
 
 /*Footer Dark Mode*/
-$footer-background-dark: #0f0e17;
-$footer-text-dark: #fffffe;
+$footer-background-dark: $light-blue;
+$footer-text-dark: $dark-blue;
 
 /*Nav Light Mode*/
-$footer-background-light: #fffffe;
-$footer-text-light: #0f0e17;
-$footer-underline: #ff8906;
+$footer-background-light: $light;
+$footer-text-light: $dark-blue;
+$footer-underline: $dark-blue;
 
 /*Extras*/
 $border-light: $light;
-$button-default: $orange;
+$button-default: $bright-blue;
 $button-text-default: $light;
 $button-hover: $light;
-$button-hover-other: $red;
-$button-hover-text: $dark;
-$headline-other: $red;
-$card-shadow: $red;
-$button-hover-text-other: $red;
+$button-hover-other: $bright-red;
+$button-hover-text: $dark-blue;
+$headline-other: $bright-red;
+$card-shadow: $bright-blue;
+$button-hover-text-other: $bright-red;
 
 /*Dark Mode*/
-$background-dark: #0f0e17;
-$paragraph-dark: #a7a9be;
-$headline-dark: #fffffe;
+$background-dark: $light-blue;
+$paragraph-dark: $dark-grey;
+$headline-dark: $dark-blue;
 
 /*Light Mode*/
-$background-light: #fffffe;
-$paragraph-light: #2e2f3e;
-$headline-light: #0f0e17;
+$background-light: $light;
+$paragraph-light: $dark-grey;
+$headline-light: $dark-blue;
 
 /*Card Dark Mode*/
-$card-background-dark: #fffffe;
-$card-headline-dark: #0f0e17;
-$card-paragraph-dark: #2e2f3e;
+$card-background-dark: $light;
+$card-headline-dark: $dark-blue;
+$card-paragraph-dark: $dark-grey;
 
 /*Card Light Mode*/
-$card-background-light: #0f0e17;
-$card-headline-light: #fffffe;
-$card-paragraph-light: #a7a9be;
+$card-background-light: $dark-blue;
+$card-headline-light: $light;
+$card-paragraph-light: $dark-grey;

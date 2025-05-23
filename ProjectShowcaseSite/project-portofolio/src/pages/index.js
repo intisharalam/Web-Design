@@ -2,14 +2,46 @@ import styles from "../styles/home.module.scss"
 import Image from "next/image";
 import PFP from "/public/PFP.jpg";
 import HelloWorld from "/public/helloWorld.jpg"
-import EERover from "/public/EERover.jpg"
-import ConFPS from "/public/ConFPS/ConFPS.png"
-import PowerGrid from "/public/PowerGrid/hardware_test.jpg"
-import TradingBot from "/public/TradingBot/Backtesting.png"
+import ImageSlider from '../components/imageSlider';
+import VideoPlayer from '../components/videoPlayer';
 
-import RadioController from "/public/RadioCtrl.jpg"
+const RadioCtrlImg = [
+  '/Simi/Proj_1/proj_1_1.jpg',
+  '/Simi/Proj_1/proj_1_2.jpg',
+  '/Simi/Proj_1/proj_1_3.jpg',
+  '/Simi/Proj_1/proj_1_4.jpg',
+  '/Simi/Proj_1/proj_1_5.jpg',
+  '/Simi/Proj_1/proj_1_6.jpg',
+  '/Simi/Proj_1/proj_1_7.jpg',
+  '/Simi/Proj_1/proj_1_8.png',
+  '/Simi/Proj_1/proj_1_9.jpg',
+];
+const EERoverImg = [
+  '/Simi/Proj_2/proj_2_1.jpg',
+  '/Simi/Proj_2/proj_2_2.jpg',
+  '/Simi/Proj_2/proj_2_3.jpg',
+  '/Simi/Proj_2/proj_2_4.jpg',
+  '/Simi/Proj_2/proj_2_5.jpg',
+  '/Simi/Proj_2/proj_2_6.jpg',
+];
+const TurbineImg = [
+  '/Simi/Proj_3/proj_3_1.jpg',
+  '/Simi/Proj_3/proj_3_2.jpg',
+  '/Simi/Proj_3/proj_3_3.jpg',
+  '/Simi/Proj_3/proj_3_4.jpg',
+  '/Simi/Proj_3/proj_3_5.jpg',
+  '/Simi/Proj_3/proj_3_6.jpg',
+  '/Simi/Proj_3/proj_3_7.jpg',
+  '/Simi/Proj_3/proj_3_8.jpg',
+  '/Simi/Proj_3/proj_3_9.jpg',
+];
 
-export default function Home() {
+const videos = [
+  '/videos/proj_4_10.mp4',
+  '/videos/Block_print.mp4',
+];
+
+export default function Home() { 
   return (
     <>
       <div className={`${styles.welcomeSect}`}>
@@ -100,22 +132,42 @@ export default function Home() {
             </div>
 
             <div className={`${styles.imgCard}`}>
-              <Image
-                src={PowerGrid}
-                alt=""
-              >
-              </Image>
+              <ImageSlider slides={RadioCtrlImg} />
+            </div>
+          </div>
+
+          <div className={`${styles.card} ${styles.projCard}`}>
+        
+            <div className={styles.projText}>
+              <h1>
+                Arduino & nRF24 Radio Controller
+              </h1>
+              <p>
+                In this project I used Arduino Nano and nRF24L01 module to make a radio transmitter.
+                The Arduino Nano takes in digital and analog inputs components on board and packages them in a
+                data structure that is sent to receiver that decodes it and uses it as needed. What made this
+                different from my other projects is the use of PCB which I designed using CircuitMaker 2 (Altium).
+              </p>
+              <div className={styles.skills}>
+                <h4>Arduino</h4>
+                <h4>Soldering</h4>
+                <h4>Altium CircuitMaker 2</h4>
+              </div>
+            </div>
+
+                        <div className={`${styles.imgCard}`}>
+            <div className={styles.video_container}>
+              <VideoPlayer
+                videoSrc={videos[1]}
+              />
+            </div>
             </div>
           </div>
 
 
           <div className={`${styles.card} ${styles.projCard}`}>
             <div className={`${styles.imgCard}`}>
-              <Image
-                src={EERover}
-                alt=""
-              >
-              </Image>
+              <ImageSlider slides={EERoverImg} />
             </div>
 
             <div className={styles.projText}>
@@ -136,64 +188,6 @@ export default function Home() {
             </div>
           </div>
 
-
-          <div className={`${styles.card} ${styles.projCard}`}>
-            <div className={styles.projText}>
-              <h1>
-                Stock Market Prediction Model
-              </h1>
-              <p>
-                This personal project involved developing a machine learning model to predict stock market movements.
-                I used Python along with technical indicators like SMA, RSI, and ADX, and implemented Bagging SVM and Voting Classifier algorithms to achieve an 83% prediction accuracy.
-                <br></br>
-                Over a simulated three-year period, the model yielded a 159% return, demonstrating the effectiveness of the chosen approach.
-              </p>
-              <div className={styles.skills}>
-                <h4>Python</h4>
-                <h4>Machine Learning</h4>
-                <h4>Data Analysis</h4>
-              </div>
-            </div>
-
-            <div className={`${styles.imgCard}`}>
-              <Image
-                src={TradingBot}
-                alt="Stock Market Prediction Model"
-              >
-              </Image>
-            </div>
-          </div>
-
-
-          <div className={`${styles.card} ${styles.projCard}`}>
-
-
-          <div className={`${styles.imgCard}`}>
-              <Image
-                src={ConFPS} // Replace with the image related to your FPS game
-                alt="Console FPS Game Screenshot"
-              >
-              </Image>
-            </div>
-
-            <div className={styles.projText}>
-              <h1>
-                Console FPS Game Development
-              </h1>
-              <p>
-                For my personal project, I developed a console-based FPS game using C++ that features real-time player movement and collision detection.
-                I implemented raycasting techniques to create a 3D simulation, enhancing the gaming experience with optimized performance.
-                <br></br>
-                This project allowed me to deepen my understanding of game mechanics and improve my skills in C++ programming.
-              </p>
-              <div className={styles.skills}>
-                <h4>Real-time Processing</h4>
-                <h4>C++</h4>
-              </div>
-            </div>
-          </div>
-
-
           <div className={`${styles.card} ${styles.projCard}`}>
             <div className={styles.projText}>
               <h1>
@@ -213,18 +207,43 @@ export default function Home() {
             </div>
 
             <div className={`${styles.imgCard}`}>
-              <Image
-                src={RadioController}
-                alt="Coming Soon"
-              >
-              </Image>
+              <ImageSlider slides={TurbineImg} />
             </div>
 
           </div>
 
-          <div className={styles.projGallLink}>
-            <button><a href="/projGallery"> 👉 Click here to see my Portfolio 👈 </a></button>
+          <div className={`${styles.card} ${styles.projCard}`}>
+            
+            <div className={`${styles.imgCard}`}>
+            <div className={styles.video_container}>
+              <VideoPlayer
+                videoSrc={videos[0]}
+              />
+            </div>
+            </div>
+
+
+            <div className={styles.projText}>
+              <h1>
+                Arduino & nRF24 Radio Controller
+              </h1>
+              <p>
+                In this project I used Arduino Nano and nRF24L01 module to make a radio transmitter.
+                The Arduino Nano takes in digital and analog inputs components on board and packages them in a
+                data structure that is sent to receiver that decodes it and uses it as needed. What made this
+                different from my other projects is the use of PCB which I designed using CircuitMaker 2 (Altium).
+              </p>
+              <div className={styles.skills}>
+                <h4>Arduino</h4>
+                <h4>Soldering</h4>
+                <h4>Altium CircuitMaker 2</h4>
+              </div>
+            </div>
           </div>
+
+          {/* <div className={styles.projGallLink}>
+            <button><a href="/projGallery"> 👉 Click here to see my Portfolio 👈 </a></button>
+          </div> */}
 
         </div>
       </div>
@@ -250,8 +269,20 @@ export default function Home() {
               <div>
                 <h2>Email</h2>
                 <h3>
-                  <a href="mailto:intisharalam@outlook.com">
-                    intisharalam@outlook.com
+                  <a href="mailto:shumaita.alam@outlook.com">
+                    shumaita.alam@outlook.com
+                  </a>
+                </h3>
+              </div>
+            </div>
+
+                        <div className={styles.item}>
+              <i class="material-icons">description</i>
+              <div>
+                <h2>CV</h2>
+                <h3>
+                  <a href="/Simi/CV_Shumaita.pdf" target="_blank">
+                    Shumaita Alam Misbahul
                   </a>
                 </h3>
               </div>

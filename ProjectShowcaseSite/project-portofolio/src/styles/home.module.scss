@@ -224,12 +224,9 @@
 .projCard .imgCard {
   display: flex;
   justify-content: center;
-}
-.projCard .imgCard img {
-  height: 90%;
-  width: 90%;
-  box-shadow: 10px 10px $card-shadow;
-  border-radius: 2px;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 .projCard sup {
   font-size: 1rem;
@@ -251,10 +248,13 @@
   padding: 0 0 2rem 0;
 }
 .projText .skills {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  font-size: calc(11px + 0.2vw);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: 1fr;               /* 1 row */
+  gap: 30px;                            /* spacing between columns (and rows if any) */
+  font-size: calc(11px + 0.1vw);
+  align-items: center;
+  justify-content: center;
 }
 .projText h4 {
   box-shadow: 0 0 5px 1px rgba(78, 78, 78, 0.5);
@@ -354,16 +354,6 @@
     align-items: center;
   }
 
-  .projCard .imgCard {
-    display: flex;
-    justify-content: center;
-  }
-
-  .projCard .imgCard img {
-    height: 80%;
-    width: 80%;
-  }
-
   .projCard sup {
     font-size: 1rem;
   }
@@ -452,11 +442,6 @@
     font-size: calc(20px + 0.5vw);
     padding: 0 0 0.5rem 0;
     text-align: center;
-  }
-  .projCard .imgCard img {
-    height: 65%;
-    width: 65%;
-    margin-bottom: 2rem;
   }
 
   /*Contact Section*/

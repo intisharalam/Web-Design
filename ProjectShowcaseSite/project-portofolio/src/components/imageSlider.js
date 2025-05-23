@@ -1,28 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/imageslider.module.scss'; // Update the path to your CSS file
+import styles from '../styles/imageslider.module.scss'; // Update path if needed
 import Image from 'next/image';
 
-
-
-export default function Imageslider({slides}) {
+export default function Imageslider({ slides }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [popupIndex, setPopupIndex] = useState(null);
 
   const goToNextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % slides.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
 
   const goToPreviousSlide = () => {
-    setCurrentIndex((currentIndex - 1 + slides.length) % slides.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
   };
 
   useEffect(() => {
-    // Auto-slide every 2 seconds
     const interval = setInterval(goToNextSlide, 5000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentIndex]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className={styles.sliderContainer}>
@@ -34,9 +29,9 @@ export default function Imageslider({slides}) {
             alt={`Slide ${index}`}
             width={400}
             height={300}
-            className={`${styles.sliderImage} ${
-              index === currentIndex ? styles.visible : ''
-            }`}
+            className={`${styles.sliderImage} ${index === currentIndex ? styles.visible : ''}`}
+            onClick={() => setPopupIndex(currentIndex)}
+            style={{ cursor: 'pointer' }}
           />
         ))}
       </div>
@@ -44,13 +39,24 @@ export default function Imageslider({slides}) {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`${styles.dot} ${
-              index === currentIndex ? styles.active : ''
-            }`}
+            className={`${styles.dot} ${index === currentIndex ? styles.active : ''}`}
             onClick={() => setCurrentIndex(index)}
-          ></button>
+          />
         ))}
       </div>
+
+      {popupIndex !== null && (
+        <div className={styles.popupOverlay} onClick={() => setPopupIndex(null)}>
+          <Image
+            src={slides[popupIndex]}
+            alt={`Popup Slide ${popupIndex}`}
+            width={800}
+            height={600}
+            className={styles.popupImage}
+            onClick={(e) => e.stopPropagation()} // prevent closing when clicking the image
+          />
+        </div>
+      )}
     </div>
-  );  
+  );
 }

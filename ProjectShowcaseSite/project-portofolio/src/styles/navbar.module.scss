@@ -1,9 +1,10 @@
 @import "../utilities/variables";
 
 .logoImg {
-    -webkit-filter: invert(100%);
+    // -webkit-filter: invert(100%);
     margin-top: 0rem;
     align-self: center;
+    fill: $dark-blue;
 }
 
 .siteName {

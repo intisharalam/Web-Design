@@ -1,6 +1,6 @@
 import styles from "../styles/footer.module.scss"
 import Image from 'next/image'
-import Logo from "/public/Logo-black.svg"
+import Logo from "/public/logo-simi.svg"
 import Link from 'next/link';
 
 const footerCol = [
@@ -30,15 +30,15 @@ export default function Footer() {
             <div className={styles.container}>
                 <div className={styles.row}>
                     <div className={[styles.footer_col, styles.footer_logo, styles['d-flex-c']].join(' ')}>
-                        <Link href="/">
+                        {/* <Link href="/">
                             <Image
                                 className={styles.logoImg}
                                 src={Logo}
-                                width={78}
-                                height={78}
+                                width={0}
+                                height={0}
                                 alt="logo"
                             />
-                        </Link>
+                        </Link> */}
                     </div>
 
                     <FooterList arrItems={footerCol} />
@@ -46,9 +46,9 @@ export default function Footer() {
                     <div className={styles.footer_col}>
                         <h4>follow us</h4>
                         <div className={styles.social_links}>
-                            <a href="https://wa.me/447928189195"><i className={"fab fa-whatsapp"}></i></a>
-                            <a href="https://www.instagram.com/misbahulintishar.inti/"><i className="fab fa-instagram"></i></a>
-                            <a href="https://linkedin.com/in/intisharalam"><i className="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/447897371857"><i className={"fab fa-whatsapp"}></i></a>
+                            <a href="https://www.instagram.com/shumaitamisbahul"><i className="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/shumaita-misbahul-33934a219/"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>

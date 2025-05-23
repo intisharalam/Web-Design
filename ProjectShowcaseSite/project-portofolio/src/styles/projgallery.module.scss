@@ -116,7 +116,7 @@
     padding: 0 2rem 0 2rem;
     column-gap: 2.5rem;
     border-radius: 2px;
-    box-shadow: 10px 10px $button-text-default;
+    box-shadow: 10px 10px $card-shadow;
 }
 .siteImgContainer {
     width: 100%;
@@ -161,7 +161,7 @@
 
 .projDescr p {
     font-size: calc(9px + 0.5vw);
-    color: $background-dark;
+    color: $nav-text-light;
     text-align: justify;
 
 }
